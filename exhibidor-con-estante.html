@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exhibidor de Piso con Estante Superior | Materiales PDV — Centurion</title>
+<meta name="description" content="Exhibidor de piso de 5 niveles con estante superior para productos de mayor tamaño y cartelería de marca destacada. Diseñado para góndola principal o cabec">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" href="assets/img/logos/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700;900&family=Open+Sans:ital,wght@0,300;0,400;0,600&family=Open+Sans+Condensed:wght@300;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--tierra:#8E4735;--mostaza:#C0AE6C;--naranja:#E47F33;--oliva:#888B59;--crema:#FAF4EC;--crema2:#F2E8D8;--dark:#1E1810;--dark2:#2C2218;--text:#2E2416;--muted:#7A6E60;--border:rgba(142,71,53,.12)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--crema);overflow-x:hidden;line-height:1.6}
+img{max-width:100%;height:auto}
+.container{max-width:1100px;margin:0 auto;padding:0 32px}
+.eyebrow{font-family:'Open Sans Condensed',sans-serif;font-size:11px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:5px;font-family:'Open Sans Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-decoration:none;border:none;transition:all .2s;white-space:nowrap}
+.btn-primary{background:var(--tierra);color:#fff}.btn-primary:hover{background:#7A3A2A}
+.btn-outline{background:transparent;color:var(--tierra);border:2px solid var(--tierra)}.btn-outline:hover{background:var(--tierra);color:#fff}
+.btn-outline-w{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}.btn-outline-w:hover{border-color:#fff}
+.btn-naranja{background:var(--naranja);color:#fff}.btn-naranja:hover{background:#C96B22}
+.btn-wa{background:#25D366;color:#fff}.btn-wa:hover{background:#1da851}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-sm{padding:9px 16px;font-size:11px}.btn-lg{padding:14px 28px;font-size:13px}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--dark);border-bottom:2px solid var(--tierra);transition:background .3s}
+.navbar.scrolled{background:rgba(30,24,16,.97);backdrop-filter:blur(12px)}
+.navbar-inner{display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 32px;max-width:1280px;margin:0 auto}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:46px;width:auto;object-fit:contain}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.2}
+.nav-logo-text strong{font-family:'Roboto Slab',serif;font-size:15px;font-weight:700;color:#fff}
+.nav-logo-text span{font-family:'Open Sans Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--mostaza)}
+.nav-links{display:flex;align-items:center;gap:22px}
+.nav-links a{font-family:'Open Sans Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.nav-active{color:var(--mostaza)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-social{color:rgba(255,255,255,.45);text-decoration:none;transition:color .2s;display:flex;align-items:center}
+.nav-social:hover{color:var(--mostaza)}
+.nav-cta{background:var(--naranja);color:#fff;font-family:'Open Sans Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:9px 16px;border-radius:4px;border:none;cursor:pointer;transition:all .2s}
+.nav-cta:hover{background:#C96B22}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;border:none;background:none}
+.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px;display:block}
+.mob-nav{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;z-index:999;background:var(--dark);padding:20px 24px;flex-direction:column;overflow-y:auto}
+.mob-nav.open{display:flex}
+.mob-nav a{font-family:'Open Sans Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s}
+.mob-nav a:hover{color:var(--mostaza)}
+.mob-nav .mob-cta-link{margin-top:16px;background:var(--naranja);color:#fff;text-align:center;border-radius:5px;border-bottom:none;padding:14px}
+footer{background:#111009;padding:48px 0 24px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:32px;margin-bottom:32px}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.foot-logo-text strong{display:block;font-family:'Roboto Slab',serif;font-size:14px;font-weight:700;color:rgba(255,255,255,.7)}
+.foot-logo-text span{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.foot-col p{font-size:12px;color:rgba(255,255,255,.32);line-height:1.75;margin-bottom:14px}
+.foot-socials{display:flex;gap:8px}
+.foot-social{width:32px;height:32px;border-radius:4px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;transition:all .2s}
+.foot-social:hover{border-color:var(--mostaza);color:var(--mostaza)}
+.foot-social svg{width:14px;height:14px;fill:currentColor}
+.foot-col h4{font-family:'Open Sans Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:12px}
+.foot-col a{display:block;font-size:12px;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:7px;transition:color .2s}
+.foot-col a:hover{color:var(--mostaza)}
+.foot-p{font-size:12px;color:rgba(255,255,255,.28);line-height:1.65}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.foot-bottom span{font-size:10px;color:rgba(255,255,255,.2)}
+.foot-bottom a{font-size:10px;color:rgba(255,255,255,.22);text-decoration:none}
+.foot-bottom a:hover{color:rgba(255,255,255,.5)}
+.foot-bottom-links{display:flex;gap:14px}
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:900;width:52px;height:52px;border-radius:50%;background:#25D366;border:3px solid #fff;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:wapulse 3s infinite}
+@keyframes wapulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 32px rgba(37,211,102,.65)}}
+.wa-float svg{width:26px;height:26px;fill:#fff}
+.modal-ov{display:none;position:fixed;inset:0;z-index:2000;background:rgba(30,24,16,.72);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px}
+.modal-ov.open{display:flex}
+.modal-box{background:#fff;border-radius:8px;padding:36px;max-width:440px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.3)}
+.modal-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.modal-close:hover{background:var(--crema2)}
+.modal-box h2{font-family:'Roboto Slab',serif;font-size:19px;font-weight:700;color:var(--dark);margin-bottom:4px}
+.modal-box p{font-size:13px;color:var(--muted);margin-bottom:20px}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:11px}
+.fg label{font-family:'Open Sans Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.fg input{padding:10px 13px;border-radius:4px;border:1.5px solid var(--border);font-family:'Open Sans',sans-serif;font-size:13px;color:var(--text);background:#fff;transition:border-color .2s;outline:none;width:100%}
+.fg input:focus{border-color:var(--tierra)}
+.or-sep{display:flex;align-items:center;gap:10px;margin:10px 0}
+.or-sep::before,.or-sep::after{content:'';flex:1;height:1px;background:var(--border)}
+.or-sep span{font-family:'Open Sans Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.fi{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.fi.vis{opacity:1;transform:translateY(0)}
+.page-hero{background:var(--dark2);padding:112px 0 52px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 50%,rgba(192,174,108,.08),transparent 60%)}
+.page-hero-inner{position:relative;z-index:2}
+.page-hero-eyebrow{font-family:'Open Sans Condensed',sans-serif;font-size:11px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;color:var(--mostaza);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.page-hero-eyebrow::before{content:'';width:20px;height:2px;background:var(--mostaza);flex-shrink:0}
+.page-hero h1{font-family:'Roboto Slab',serif;font-size:clamp(26px,4.5vw,44px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:12px}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.55);max-width:520px;line-height:1.75;font-weight:300}
+.breadcrumb{font-family:'Open Sans Condensed',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.breadcrumb a{color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--mostaza)}
+.breadcrumb span{color:rgba(255,255,255,.2)}
+@media(max-width:1024px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  .navbar-inner{padding:0 16px}.nav-links,.nav-right{display:none}.hamburger{display:flex}
+  .container{padding:0 16px}.foot-grid{grid-template-columns:1fr 1fr}
+  .foot-bottom{flex-direction:column;text-align:center}.page-hero{padding:92px 0 36px}
+}
+@media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
+
+.exh-hero{display:grid;grid-template-columns:1fr 1fr;min-height:420px;overflow:hidden;background:#fff;border-bottom:1px solid var(--border)}
+.exh-hero-img{position:relative;background:var(--crema2);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.exh-hero-img img{width:100%;height:100%;object-fit:contain;object-position:center;max-height:520px;padding:24px}
+.exh-hero-body{padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
+.exh-canal-badge{font-family:'Open Sans Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--tierra);margin-bottom:8px}
+.exh-hero-body h1{font-family:'Roboto Slab',serif;font-size:clamp(22px,3vw,32px);font-weight:900;color:var(--dark);margin-bottom:14px;line-height:1.2}
+.exh-hero-body p{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:24px}
+.exh-canal-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px}
+.exh-chip{font-family:'Open Sans Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:4px;background:var(--crema2);color:var(--muted);border:1px solid var(--border)}
+.exh-cta{display:flex;gap:10px;flex-wrap:wrap}
+
+/* Especificaciones */
+.exh-specs{padding:64px 0;background:var(--crema2)}
+.exh-specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.specs-table{border-radius:7px;overflow:hidden;border:1px solid var(--border);background:#fff}
+.specs-table h3{font-family:'Roboto Slab',serif;font-size:14px;font-weight:700;color:#fff;padding:14px 20px;background:var(--tierra);margin:0}
+.spec-row{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid var(--border)}
+.spec-row:last-child{border-bottom:none}
+.spec-label{font-family:'Open Sans Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);padding:12px 16px;background:var(--crema2);border-right:1px solid var(--border)}
+.spec-val{font-size:13px;color:var(--text);padding:12px 16px}
+.exh-specs-notes h3{font-family:'Roboto Slab',serif;font-size:16px;font-weight:700;color:var(--dark);margin-bottom:14px}
+.exh-specs-notes p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:10px}
+
+/* Ficha técnica */
+.exh-tecnica{padding:56px 0;background:#fff}
+.exh-tecnica h2{font-family:'Roboto Slab',serif;font-size:22px;font-weight:700;color:var(--dark);margin-bottom:28px}
+.tecnica-img{border-radius:8px;overflow:hidden;border:1px solid var(--border);background:var(--crema2)}
+.tecnica-img img{width:100%;display:block}
+.tecnica-ph{padding:48px;text-align:center;border:2px dashed var(--mostaza);border-radius:8px;background:var(--crema)}
+.tecnica-ph p{font-family:'Open Sans Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mostaza);font-weight:700}
+.tecnica-ph span{font-size:13px;color:var(--muted);display:block;margin-top:4px}
+
+/* Otros exhibidores */
+.otros-exh{padding:56px 0;background:var(--crema2)}
+.otros-exh h2{font-family:'Roboto Slab',serif;font-size:20px;font-weight:700;color:var(--dark);margin-bottom:28px}
+.otros-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.otro-card{border-radius:7px;overflow:hidden;border:1px solid var(--border);background:#fff;transition:all .22s;text-decoration:none;display:flex;flex-direction:column}
+.otro-card:hover{border-color:var(--tierra);transform:translateY(-3px);box-shadow:0 8px 20px rgba(142,71,53,.1)}
+.otro-card-img{height:200px;overflow:hidden;background:var(--crema2);display:flex;align-items:center;justify-content:center}
+.otro-card-img img{width:100%;height:100%;object-fit:contain;object-position:center;padding:16px}
+.otro-card-body{padding:14px;flex:1}
+.otro-card-title{font-family:'Roboto Slab',serif;font-size:13px;font-weight:700;color:var(--dark);margin-bottom:3px}
+.otro-card-canal{font-size:11px;color:var(--muted)}
+
+/* CTA final */
+.exh-cta-final{background:var(--tierra);padding:52px 0;text-align:center}
+.exh-cta-final h2{font-family:'Roboto Slab',serif;font-size:22px;color:#fff;margin-bottom:8px}
+.exh-cta-final p{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:22px}
+.exh-cta-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .exh-hero{grid-template-columns:1fr}
+  .exh-hero-img{min-height:320px;max-height:420px}
+  .exh-hero-body{padding:36px 24px}
+  .exh-specs-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .exh-hero-img img{max-height:360px}
+  .otros-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){.otros-grid{grid-template-columns:1fr}}
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/img/logos/centurion-logo.png" alt="Centurion">
+      <div class="nav-logo-text"><strong>Centurion</strong><span>Desde 1959 · Industria Argentina</span></div>
+    </a>
+    <div class="nav-links"><a href="productos.html" >Productos</a><a href="nosotros.html" >Nosotros</a><a href="recetas.html" >Recetas</a><a href="distribuidores.html" class=nav-active>Distribuidores</a><a href="contacto.html" >Contacto</a></div>
+    <div class="nav-right">
+      <a href="https://www.instagram.com/productoscenturion/" target="_blank" class="nav-social"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.facebook.com/productoscenturion" target="_blank" class="nav-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <button class="nav-cta" onclick="openModal()">Solicitar catalogo</button>
+    </div>
+    <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-nav" id="mob-nav">
+  <a href="productos.html" onclick="closeMob()">Productos</a><a href="nosotros.html" onclick="closeMob()">Nosotros</a><a href="recetas.html" onclick="closeMob()">Recetas</a><a href="distribuidores.html" onclick="closeMob()">Distribuidores</a><a href="contacto.html" onclick="closeMob()">Contacto</a>
+  <a href="#" onclick="openModal();closeMob()" class="mob-cta-link">Solicitar catalogo</a>
+</div>
+
+<!-- Breadcrumb hero -->
+<section class="page-hero" style="padding-bottom:0">
+  <div class="container">
+    <div class="page-hero-inner fi">
+      <div class="breadcrumb">
+        <a href="distribuidores.html">Distribuidores</a>
+        <span>/</span>
+        <a href="distribuidores.html#materiales-pdv">Materiales de exhibicion</a>
+        <span>/</span>
+        <span style="color:rgba(255,255,255,.55)">Exhibidor de Piso con Estante Superior</span>
+      </div>
+      <div class="page-hero-eyebrow">Materiales de exhibicion</div>
+    </div>
+  </div>
+</section>
+
+<!-- HERO EXHIBIDOR -->
+<div class="exh-hero">
+  <div class="exh-hero-img">
+    <img src="assets/img/exhibidores/exhibidor-con-estante.jpg" alt="Exhibidor de Piso con Estante Superior">
+  </div>
+  <div class="exh-hero-body">
+    <div class="exh-canal-badge">Supermercados · Cadenas</div>
+    <h1>Exhibidor de Piso con Estante Superior</h1>
+    <p>Exhibidor de piso de 5 niveles con estante superior para productos de mayor tamaño y cartelería de marca destacada. Diseñado para góndola principal o cabecera de pasillo en grandes superficies.</p>
+    <div class="exh-canal-chips"><span class="exh-chip">Supermercados</span><span class="exh-chip">Cadenas</span><span class="exh-chip">Cabecera de pasillo</span></div>
+    <div class="exh-cta">
+      <a href="https://api.whatsapp.com/send?phone=5491165107273&text=Hola!+Me+interesa+el+Exhibidor+de+Piso+con+Estante+Superior" target="_blank" class="btn btn-wa btn-lg">Consultar por WhatsApp</a>
+      <a href="distribuidores.html#formulario" class="btn btn-outline btn-lg">Contactar al equipo</a>
+    </div>
+  </div>
+</div>
+
+<!-- ESPECIFICACIONES -->
+<section class="exh-specs">
+  <div class="container">
+    <div class="exh-specs-grid">
+      <div>
+        <div class="eyebrow" style="color:var(--tierra);margin-bottom:12px">Especificaciones tecnicas</div>
+        <div class="specs-table fi">
+          <h3>Detalles del exhibidor</h3>
+          <div class="spec-row"><div class="spec-label">Material</div><div class="spec-val">Acero pintado</div></div><div class="spec-row"><div class="spec-label">Terminación</div><div class="spec-val">Pintura electrostática negra</div></div><div class="spec-row"><div class="spec-label">Uso</div><div class="spec-val">Interior</div></div><div class="spec-row"><div class="spec-label">Sistema</div><div class="spec-val">Ganchos y estante superior</div></div><div class="spec-row"><div class="spec-label">Reposición</div><div class="spec-val">Frontal</div></div><div class="spec-row"><div class="spec-label">Entrega</div><div class="spec-val">Armado</div></div>
+        </div>
+        <div class="specs-table fi" style="margin-top:16px">
+          <h3>Capacidad</h3>
+          <div class="spec-row"><div class="spec-label">Posiciones</div><div class="spec-val">+25 referencias</div></div><div class="spec-row"><div class="spec-label">Productos visibles</div><div class="spec-val">+25 referencias + estante</div></div><div class="spec-row"><div class="spec-label">Dimensiones</div><div class="spec-val">A confirmar con el equipo comercial</div></div>
+        </div>
+      </div>
+      <div class="exh-specs-notes fi">
+        <h3>Para quien esta pensado</h3>
+        <p>El <strong>Exhibidor de Piso con Estante Superior</strong> esta disenado especialmente para el canal <em>supermercados · cadenas</em>.</p>
+        <p>Los exhibidores y materiales de punto de venta estan disponibles para distribuidores y clientes activos de Centurion. La disponibilidad de cada modelo depende del tipo de canal y el volumen de compra.</p>
+        <p>Consulta con el equipo comercial para verificar disponibilidad en tu zona y las condiciones de acceso a cada material.</p>
+        <div style="margin-top:24px">
+          <a href="distribuidores.html#formulario" class="btn btn-primary">Consultar disponibilidad</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FICHA TECNICA -->
+<section class="exh-tecnica">
+  <div class="container">
+    <div class="fi">
+      <div class="eyebrow" style="color:var(--tierra);margin-bottom:10px">Ficha tecnica</div>
+      <h2>Dimensiones y distribución</h2>
+    </div>
+    <div class="tecnica-ph">
+  <p>IMG_TECNICA_EXHIBIDOR_CON_ESTANTE</p>
+  <span>Ficha tecnica — a incorporar</span>
+</div>
+  </div>
+</section>
+
+<!-- OTROS EXHIBIDORES -->
+<section class="otros-exh">
+  <div class="container">
+    <h2 class="fi">Otros materiales de exhibicion</h2>
+    <div class="otros-grid"><a href="exhibidor-de-mesa.html" class="otro-card fi">
+  <div class="otro-card-img"><img src="assets/img/exhibidores/exhibidor-de-mesa.jpg" alt="Exhibidor de Mesa Mediano" loading="lazy"></div>
+  <div class="otro-card-body">
+    <div class="otro-card-title">Exhibidor de Mesa Mediano</div>
+    <div class="otro-card-canal">Dietéticas · Almacenes · Rotiserías</div>
+  </div>
+</a><a href="exhibidor-estateria.html" class="otro-card fi">
+  <div class="otro-card-img"><img src="assets/img/exhibidores/estateria.jpg" alt="Estantería de Piso para Mayoristas" loading="lazy"></div>
+  <div class="otro-card-body">
+    <div class="otro-card-title">Estantería de Piso para Mayoristas</div>
+    <div class="otro-card-canal">Mayoristas · Depósitos · Distribuidoras</div>
+  </div>
+</a><a href="exhibidor-mediano.html" class="otro-card fi">
+  <div class="otro-card-img"><img src="assets/img/exhibidores/exhibidor-mediano.jpg" alt="Exhibidor Mediano de Piso" loading="lazy"></div>
+  <div class="otro-card-body">
+    <div class="otro-card-title">Exhibidor Mediano de Piso</div>
+    <div class="otro-card-canal">Supermercados · Autoservicios · Carnicerías</div>
+  </div>
+</a><a href="exhibidor-cajitas-cartulina.html" class="otro-card fi">
+  <div class="otro-card-img"><img src="assets/img/exhibidores/cajitas-cartulina.jpg" alt="Cajas Exhibidoras para Góndola" loading="lazy"></div>
+  <div class="otro-card-body">
+    <div class="otro-card-title">Cajas Exhibidoras para Góndola</div>
+    <div class="otro-card-canal">Todos los canales</div>
+  </div>
+</a></div>
+    <div style="margin-top:24px" class="fi">
+      <a href="distribuidores.html#materiales-pdv" class="btn btn-outline">Ver todos los materiales &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="exh-cta-final">
+  <div class="container">
+    <div class="fi">
+      <h2>Queres incorporar este exhibidor en tu local?</h2>
+      <p>Los materiales de PDV estan disponibles para distribuidores activos. Consulta condiciones.</p>
+      <div class="exh-cta-btns">
+        <a href="https://api.whatsapp.com/send?phone=5491165107273&text=Hola!+Me+interesa+el+Exhibidor+de+Piso+con+Estante+Superior" target="_blank" class="btn btn-wa btn-lg">Consultar por WhatsApp</a>
+        <a href="distribuidores.html#formulario" class="btn btn-outline-w btn-lg">Completar formulario</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-brand">
+          <img src="assets/img/logos/centurion-logo.png" alt="Centurion" style="height:34px;filter:brightness(0) invert(1) opacity(.65)">
+          <div class="foot-logo-text"><strong>Centurion</strong><span>Sierras Marianas S.A.</span></div>
+        </div>
+        <p>Elaboracion y distribucion de especias, condimentos y alimentos desde 1959. Empresa familiar del Gran Buenos Aires. Industria Argentina.</p>
+        <div class="foot-socials">
+          <a href="https://www.instagram.com/productoscenturion/" target="_blank" class="foot-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://www.facebook.com/productoscenturion" target="_blank" class="foot-social"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Navegacion</h4>
+        <a href="index.html">Inicio</a><a href="productos.html">Productos</a>
+        <a href="nosotros.html">Nosotros</a><a href="recetas.html">Recetas</a>
+        <a href="distribuidores.html">Distribuidores</a><a href="contacto.html">Contacto</a>
+      </div>
+      <div class="foot-col"><h4>Exhibidores</h4>
+        <a href="exhibidor-de-mesa.html">Exhibidor de Mesa Mediano</a><a href="exhibidor-estateria.html">Estantería de Piso para Mayoristas</a><a href="exhibidor-mediano.html">Exhibidor Mediano de Piso</a><a href="exhibidor-con-estante.html">Exhibidor de Piso con Estante Superior</a><a href="exhibidor-cajitas-cartulina.html">Cajas Exhibidoras para Góndola</a>
+      </div>
+      <div class="foot-col"><h4>Contacto</h4>
+        <a href="tel:+541144864495">011-4486-4495</a>
+        <a href="mailto:info@productoscenturion.com.ar">info@productoscenturion.com.ar</a>
+        <p class="foot-p" style="margin-top:8px">Gran Buenos Aires · Argentina</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>2025 Sierras Marianas S.A. Todos los derechos reservados.</span>
+      <div class="foot-bottom-links">
+        <a href="privacidad.html">Politica de privacidad</a>
+        <a href="terminos.html">Terminos y condiciones</a>
+      </div>
+      <span>Industria Argentina</span>
+    </div>
+  </div>
+</footer>
+<a href="https://api.whatsapp.com/send?phone=5491165107273" target="_blank" class="wa-float"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+<div class="modal-ov" id="modalOv" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">&#215;</button>
+    <h2>Solicita el catalogo mayorista</h2>
+    <p>Completa tus datos y te enviamos el catalogo con todas las lineas y condiciones.</p>
+    <form onsubmit="submitCat(event)">
+      <div class="fg"><label>Nombre *</label><input type="text" placeholder="Tu nombre completo" required></div>
+      <div class="fg"><label>Telefono / WhatsApp *</label><input type="tel" placeholder="011 1234-5678" required></div>
+      <div class="fg"><label>Email *</label><input type="email" placeholder="tu@mail.com" required></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:4px">Solicitar catalogo</button>
+    </form>
+    <div class="or-sep"><span>o</span></div>
+    <a href="https://api.whatsapp.com/send?phone=5491165107273&text=Hola!+Quiero+el+catalogo+mayorista+de+Centurion." target="_blank" class="btn btn-wa" style="width:100%;justify-content:center">Pedir por WhatsApp</a>
+  </div>
+</div>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)},{passive:true})
+document.getElementById('ham').addEventListener('click',()=>{document.getElementById('mob-nav').classList.toggle('open')})
+function closeMob(){document.getElementById('mob-nav').classList.remove('open')}
+function openModal(){document.getElementById('modalOv').classList.add('open')}
+function closeModal(){document.getElementById('modalOv').classList.remove('open')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()})
+function submitCat(e){
+  e.preventDefault();const btn=e.target.querySelector('[type=submit]');
+  btn.textContent='Solicitud enviada — te contactamos pronto';btn.style.background='#25D366';
+  setTimeout(closeModal,2200)
+}
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')});},{threshold:0.06})
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el))
+</script>
+</body>
+</html>
