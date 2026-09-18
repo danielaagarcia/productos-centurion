@@ -631,7 +631,7 @@ footer{background:#111009;padding:52px 0 24px}
       </div>
       <div class="cat-actions">
         <a href="formulario-de-contacto/?origen=index" class="btn btn-dark btn-lg">Solicitar catálogo PDF</a>
-        <a href="https://api.whatsapp.com/send?phone=5491165107273&text=Hola!+Quiero+el+catálogo+mayorista+de+Centurión." target="_blank" class="btn btn-outline-w btn-lg">Pedir por WhatsApp</a>
+        <a href="https://api.whatsapp.com/send?phone=5491163787553&text=Hola!+Quiero+el+catálogo+mayorista+de+Centurión." target="_blank" class="btn btn-outline-w btn-lg">Pedir por WhatsApp</a>
       </div>
     </div>
   </div>
@@ -759,26 +759,9 @@ footer{background:#111009;padding:52px 0 24px}
       <div class="form-wrap fi">
         <div class="form-title">Consultanos sin compromiso</div>
         <div class="form-sub">Completa el formulario y te contactamos con condiciones y catálogo.</div>
-        <form onsubmit="submitDist(event)">
-          <div class="form-row">
-            <div class="fg"><label>Nombre *</label><input type="text" placeholder="Tu nombre" required></div>
-            <div class="fg"><label>Ciudad *</label><input type="text" placeholder="Ciudad, Provincia" required></div>
-          </div>
-          <div class="fg"><label>Teléfono / WhatsApp *</label><input type="tel" placeholder="Ej: 011 1234-5678" required></div>
-          <div class="fg"><label>Correo electrónico *</label><input type="email" placeholder="tu@mail.com" required></div>
-          <div class="fg">
-            <label>Me interesa</label>
-            <div class="form-checks">
-              <label class="form-check"><input type="checkbox" value="distribuidor"> Ser distribuidor</label>
-              <label class="form-check"><input type="checkbox" value="mayorista"> Compra mayorista</label>
-              <label class="form-check"><input type="checkbox" value="vendedor"> Vendedor independiente</label>
-              <label class="form-check"><input type="checkbox" value="gastronomia"> Gastronomía</label>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" id="distBtn">Enviar consulta</button>
-        </form>
+        <a href="formulario-de-contacto/?origen=index&tipo=vendedor" class="btn btn-primary" style="width:100%;justify-content:center">Ir al formulario de contacto</a>
         <div class="or-sep"><span>o</span></div>
-        <a href="https://api.whatsapp.com/send?phone=5491165107273&text=Hola!+Me+interesa+distribuir+Productos+Centurión." target="_blank" class="btn btn-wa" style="width:100%;justify-content:center">Consultar por WhatsApp</a>
+        <a href="https://api.whatsapp.com/send?phone=5491163787553&text=Hola!+Me+interesa+distribuir+Productos+Centurión." target="_blank" class="btn btn-wa" style="width:100%;justify-content:center">Consultar por WhatsApp</a>
       </div>
     </div>
   </div>
@@ -807,7 +790,7 @@ footer{background:#111009;padding:52px 0 24px}
       <h2>¿Querés incorporar Centurión a tu negocio?</h2>
       <p>Contactanos y en poco tiempo podés estar vendiendo más de 100 productos con una marca que ya tiene más de seis décadas en el mercado argentino.</p>
       <div class="cta-btns">
-        <a href="https://api.whatsapp.com/send?phone=5491165107273&text=Hola!+Quiero+información+sobre+Productos+Centurión." target="_blank" class="btn btn-wa btn-lg">Hablar por WhatsApp</a>
+        <a href="https://api.whatsapp.com/send?phone=5491163787553&text=Hola!+Quiero+información+sobre+Productos+Centurión." target="_blank" class="btn btn-wa btn-lg">Hablar por WhatsApp</a>
         <a href="formulario-de-contacto/?origen=index" class="btn btn-naranja btn-lg">Solicitar catálogo</a>
         <a href="distribuidores.html" class="btn btn-outline-w btn-lg">Quiero ser distribuidor</a>
       </div>
@@ -883,10 +866,6 @@ function filterCat(cat,btn){
   document.querySelectorAll('.linea-card').forEach(c=>{
     c.style.display=(cat==='all'||c.dataset.cat===cat)?'flex':'none'
   })
-}
-function submitDist(e){
-  e.preventDefault();const btn=document.getElementById('distBtn');
-  btn.textContent='Consulta enviada';btn.style.background='#25D366';btn.disabled=true;
 }
 </script>
 <script>
