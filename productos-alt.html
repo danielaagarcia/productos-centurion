@@ -186,6 +186,15 @@ footer{background:#111009;padding:48px 0 24px}
 .alt-car-nav svg{width:20px;height:20px;stroke:var(--tierra);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .alt-car-prev{left:-23px}
 .alt-car-next{right:-23px}
+
+/* ---- Navegación vertical fija (scrollspy) ---- */
+.alt-dotnav{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:80;display:flex;flex-direction:column;align-items:center;gap:13px}
+.alt-dotnav a{position:relative;width:11px;height:11px;border-radius:50%;box-shadow:0 0 0 2px rgba(255,255,255,.7);transition:transform .2s,box-shadow .2s}
+.alt-dotnav a:hover,.alt-dotnav a.active{transform:scale(1.35)}
+.alt-dotnav a.active{box-shadow:0 0 0 2px rgba(255,255,255,.9),0 0 0 3.5px currentColor}
+.alt-dotnav a span{position:absolute;right:22px;top:50%;transform:translateY(-50%);white-space:nowrap;background:var(--dark);color:#fff;font-family:'Open Sans Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.6px;text-transform:uppercase;padding:6px 11px;border-radius:5px;opacity:0;pointer-events:none;transition:opacity .15s}
+.alt-dotnav a:hover span{opacity:1}
+@media(max-width:1300px){.alt-dotnav{display:none}}
 @media(max-width:768px){
   .alt-hero{padding:92px 0 32px}
   .alt-head-icon{width:48px;height:48px;margin-bottom:12px}
@@ -249,6 +258,8 @@ footer{background:#111009;padding:48px 0 24px}
 <div class="alt-pillbar">
   <div class="container"><div class="alt-pillgrid"><a href="#prod-especias" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M9 3c3 0 4.2 2.1 4.2 2.1S16 12.5 12 18.5c-2 3-6.7 2-7.6-1.8C2.8 11.8 6 3 9 3z"/><path d="M9 3c1-1.2 3-2 4-1"/></svg><span>Especias</span></a><a href="#prod-hierbas" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M4 20C4 10 12 4 20 4c0 8-6 16-16 16z"/><path d="M4 20 14 10"/></svg><span>Hierbas aromáticas</span></a><a href="#prod-condimentos" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M8 2h8l-1 4H9z"/><path d="M8 6h8l1 13.5A2 2 0 0 1 15 22H9a2 2 0 0 1-2-2.5z"/><circle cx="10" cy="11" r=".7" fill="currentColor" stroke="none"/><circle cx="14" cy="11" r=".7" fill="currentColor" stroke="none"/><circle cx="12" cy="14.5" r=".7" fill="currentColor" stroke="none"/></svg><span>Condimentos</span></a><a href="#prod-deshidratados" class="alt-pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg><span>Deshidratados</span></a><a href="#prod-salsas" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M9 2h6v3.2l2 2.3V20a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V7.5l2-2.3z"/><path d="M7 12h10"/></svg><span>Salsas</span></a><a href="#prod-reposteria" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M12 2v8"/><path d="M8 10c-2.2 0-3.3 2-3.3 4.3S6.5 18 8 18M16 10c2.2 0 3.3 2 3.3 4.3S17.5 18 16 18M12 10c-1.3 1.6-1.3 6.4 0 10M12 10c1.3 1.6 1.3 6.4 0 10"/><path d="M8 20h8"/></svg><span>Repostería y cocina</span></a><a href="#prod-instantaneos" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M3 11h18l-1.6 7.2A2 2 0 0 1 17.5 20h-11a2 2 0 0 1-1.9-1.8z"/><path d="M12 11V8M9 5c0-1 1-1.2 1-2.2M12 5c0-1 1-1.2 1-2.2M15 5c0-1 1-1.2 1-2.2"/></svg><span>Instantáneos</span></a><a href="#prod-postres" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M6 3h12l-1.1 15.2A2 2 0 0 1 14.9 20H9.1a2 2 0 0 1-2-1.8z"/><path d="M6 8h12"/><path d="M12 8v-5"/></svg><span>Postres y gelatinas</span></a><a href="#prod-frutos" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M12 9c3.3 0 5.3 2.6 5.3 6a5.3 5.3 0 0 1-10.6 0c0-3.4 2-6 5.3-6z"/><path d="M8.3 9c0-2.2 1.3-4 3.7-4s3.7 1.8 3.7 4"/></svg><span>Frutos secos</span></a></div></div>
 </div>
+
+<nav class="alt-dotnav" aria-label="Navegación por línea"><a href="#prod-especias" data-target="prod-especias" style="background:#CC1B1B;color:#CC1B1B"><span>Especias</span></a><a href="#prod-hierbas" data-target="prod-hierbas" style="background:#3A6B2A;color:#3A6B2A"><span>Hierbas aromáticas</span></a><a href="#prod-condimentos" data-target="prod-condimentos" style="background:#8E4735;color:#8E4735"><span>Condimentos</span></a><a href="#prod-deshidratados" data-target="prod-deshidratados" style="background:#7A6830;color:#7A6830"><span>Deshidratados</span></a><a href="#prod-salsas" data-target="prod-salsas" style="background:#C0390F;color:#C0390F"><span>Salsas</span></a><a href="#prod-reposteria" data-target="prod-reposteria" style="background:#C0AE6C;color:#C0AE6C"><span>Repostería y cocina</span></a><a href="#prod-instantaneos" data-target="prod-instantaneos" style="background:#E8A000;color:#E8A000"><span>Instantáneos</span></a><a href="#prod-postres" data-target="prod-postres" style="background:#9B4A9B;color:#9B4A9B"><span>Postres y gelatinas</span></a><a href="#prod-frutos" data-target="prod-frutos" style="background:#6B4A1A;color:#6B4A1A"><span>Frutos secos</span></a></nav>
 
 <div class="alt-wrap">
 
@@ -837,6 +848,19 @@ document.querySelectorAll('.alt-car-nav').forEach(btn=>{
     grid.scrollBy({left:btn.classList.contains('alt-car-prev')?-step:step,behavior:'smooth'});
   });
 });
+const dotLinks=document.querySelectorAll('.alt-dotnav a');
+if(dotLinks.length){
+  const spy=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        dotLinks.forEach(a=>a.classList.remove('active'));
+        const link=document.querySelector('.alt-dotnav a[data-target="'+entry.target.id+'"]');
+        if(link)link.classList.add('active');
+      }
+    });
+  },{rootMargin:'-45% 0px -45% 0px',threshold:0});
+  document.querySelectorAll('.alt-linea').forEach(s=>spy.observe(s));
+}
 </script>
 
 </body>

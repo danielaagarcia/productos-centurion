@@ -126,6 +126,15 @@ CSS_EXTRA = """
 .alt-car-nav svg{width:20px;height:20px;stroke:var(--tierra);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .alt-car-prev{left:-23px}
 .alt-car-next{right:-23px}
+
+/* ---- Navegación vertical fija (scrollspy) ---- */
+.alt-dotnav{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:80;display:flex;flex-direction:column;align-items:center;gap:13px}
+.alt-dotnav a{position:relative;width:11px;height:11px;border-radius:50%;box-shadow:0 0 0 2px rgba(255,255,255,.7);transition:transform .2s,box-shadow .2s}
+.alt-dotnav a:hover,.alt-dotnav a.active{transform:scale(1.35)}
+.alt-dotnav a.active{box-shadow:0 0 0 2px rgba(255,255,255,.9),0 0 0 3.5px currentColor}
+.alt-dotnav a span{position:absolute;right:22px;top:50%;transform:translateY(-50%);white-space:nowrap;background:var(--dark);color:#fff;font-family:'Open Sans Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.6px;text-transform:uppercase;padding:6px 11px;border-radius:5px;opacity:0;pointer-events:none;transition:opacity .15s}
+.alt-dotnav a:hover span{opacity:1}
+@media(max-width:1300px){.alt-dotnav{display:none}}
 @media(max-width:768px){
   .alt-hero{padding:92px 0 32px}
   .alt-head-icon{width:48px;height:48px;margin-bottom:12px}
@@ -140,6 +149,11 @@ CSS_EXTRA = """
 
 PILLS = "".join(
     f'<a href="#{l["id"]}" class="alt-pill"><svg viewBox="0 0 24 24">{ICONS.get(l["id"],"")}</svg><span>{l["nombre"]}</span></a>'
+    for l in LINEAS
+)
+
+DOTNAV = "".join(
+    f'<a href="#{l["id"]}" data-target="{l["id"]}" style="background:{l["color"]};color:{l["color"]}"><span>{l["nombre"]}</span></a>'
     for l in LINEAS
 )
 
@@ -194,6 +208,8 @@ body_main = f"""
   <div class="container"><div class="alt-pillgrid">{PILLS}</div></div>
 </div>
 
+<nav class="alt-dotnav" aria-label="Navegación por línea">{DOTNAV}</nav>
+
 <div class="alt-wrap">
 {''.join(sections)}
   <div class="container">
@@ -235,6 +251,19 @@ document.querySelectorAll('.alt-car-nav').forEach(btn=>{
     grid.scrollBy({left:btn.classList.contains('alt-car-prev')?-step:step,behavior:'smooth'});
   });
 });
+const dotLinks=document.querySelectorAll('.alt-dotnav a');
+if(dotLinks.length){
+  const spy=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        dotLinks.forEach(a=>a.classList.remove('active'));
+        const link=document.querySelector('.alt-dotnav a[data-target="'+entry.target.id+'"]');
+        if(link)link.classList.add('active');
+      }
+    });
+  },{rootMargin:'-45% 0px -45% 0px',threshold:0});
+  document.querySelectorAll('.alt-linea').forEach(s=>spy.observe(s));
+}
 </script>
 """
 
