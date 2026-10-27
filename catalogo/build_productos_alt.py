@@ -51,13 +51,6 @@ for l in LINEAS:
         for p in l["productos"]:
             p["img"] = None
 
-# Franja de fondo con borde ondulado que va DETRÁS del escudo "Centurión" en
-# cada sobre (la que cambia de color según el sabor/línea, ej. verde en
-# Albahaca). Recuperada como curvas vectoriales desde CENTURION cartel.pdf
-# — no redibujada.
-MEDAL_VB = "0 0 1218.9 206.62"
-MEDAL_PATH = "M0,0 L0,135.39 C204.01,180.27 338.2,206.62 606.49,206.62 C877.37,206.62 1013.79,179.76 1218.9,134.09 L1218.9,0 Z"
-
 # Ícono lineal simple por línea (mismo estilo que los íconos ya usados en el sitio)
 ICONS = {
     "prod-especias": '<path d="M9 3c3 0 4.2 2.1 4.2 2.1S16 12.5 12 18.5c-2 3-6.7 2-7.6-1.8C2.8 11.8 6 3 9 3z"/><path d="M9 3c1-1.2 3-2 4-1"/>',
@@ -105,12 +98,12 @@ CSS_EXTRA = """
 .alt-pill span{line-height:1.25}
 .alt-wrap{background:var(--crema2)}
 .alt-linea{padding:46px 0 10px;scroll-margin-top:84px}
-.alt-tab-row{margin-bottom:22px}
-.alt-tab{position:relative;width:100%;aspect-ratio:1218.9/206.62;filter:drop-shadow(0 6px 14px rgba(0,0,0,.14))}
-.alt-medal-bg{position:absolute;inset:0;width:100%;height:100%;display:block}
-.alt-tab-content{position:absolute;left:50%;top:59%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;gap:12px;max-width:84%;color:#fff;font-family:'Fertigo Pro','Roboto Slab',serif;font-weight:400;font-size:34px;line-height:1.15;letter-spacing:.3px;text-align:center}
-.alt-tab-content svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
-.alt-desc{text-align:center;color:var(--muted);font-size:13px;max-width:460px;margin:-20px auto 30px}
+.alt-head{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:14px}
+.alt-head-icon{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 2px 10px rgba(30,24,16,.07)}
+.alt-head-icon svg{width:27px;height:27px;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.alt-head h2{font-family:'Fertigo Pro','Roboto Slab',serif;font-weight:400;font-size:34px;color:var(--dark);letter-spacing:.3px;line-height:1.1;margin-bottom:12px}
+.alt-head-rule{width:54px;height:3px;border-radius:2px}
+.alt-desc{text-align:center;color:var(--muted);font-size:13px;max-width:460px;margin:14px auto 30px}
 
 /* ---- Carrusel de productos por línea ---- */
 .alt-carousel{position:relative}
@@ -135,8 +128,9 @@ CSS_EXTRA = """
 .alt-car-next{right:-23px}
 @media(max-width:768px){
   .alt-hero{padding:92px 0 32px}
-  .alt-tab-content{font-size:21px;gap:7px}
-  .alt-tab-content svg{width:19px;height:19px}
+  .alt-head-icon{width:48px;height:48px;margin-bottom:12px}
+  .alt-head-icon svg{width:22px;height:22px}
+  .alt-head h2{font-size:25px}
   .alt-card{flex:0 0 80%}
   .alt-card-img{height:290px}
   .alt-card-img img{max-height:260px;max-width:230px}
@@ -172,11 +166,12 @@ for l in LINEAS:
     sections.append(f"""
 <div class="alt-linea" id="{l['id']}">
   <div class="container">
-    <div class="alt-tab-row fi">
-      <div class="alt-tab" style="color:{l['color']}">
-        <svg class="alt-medal-bg" viewBox="{MEDAL_VB}" preserveAspectRatio="none"><path d="{MEDAL_PATH}" fill="currentColor"/></svg>
-        <div class="alt-tab-content"><svg viewBox="0 0 24 24">{ICONS.get(l['id'],'')}</svg><span>{l['nombre']}</span></div>
+    <div class="alt-head fi">
+      <div class="alt-head-icon" style="background:color-mix(in srgb, {l['color']} 14%, #fff)">
+        <svg viewBox="0 0 24 24" style="stroke:{l['color']}">{ICONS.get(l['id'],'')}</svg>
       </div>
+      <h2>{l['nombre']}</h2>
+      <div class="alt-head-rule" style="background:{l['color']}"></div>
     </div>
     <p class="alt-desc fi">{l['desc']}</p>
     <div class="alt-carousel fi">
