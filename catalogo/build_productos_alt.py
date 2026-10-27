@@ -108,27 +108,27 @@ CSS_EXTRA = """
 .alt-grid::-webkit-scrollbar{height:6px}
 .alt-grid::-webkit-scrollbar-track{background:transparent}
 .alt-grid::-webkit-scrollbar-thumb{background:var(--tierra);border-radius:3px}
-.alt-card{flex:0 0 272px;scroll-snap-align:start;text-align:center}
-.alt-card-img{position:relative;height:250px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:14px;margin-bottom:14px;box-shadow:0 2px 10px rgba(30,24,16,.06);transition:transform .2s}
+.alt-card{flex:0 0 340px;scroll-snap-align:start;text-align:center}
+.alt-card-img{position:relative;height:360px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:14px;margin-bottom:16px;box-shadow:0 2px 10px rgba(30,24,16,.06);transition:transform .2s}
 .alt-card:hover .alt-card-img{transform:translateY(-3px);box-shadow:0 10px 22px rgba(30,24,16,.1)}
-.alt-card-img img{max-height:208px;max-width:184px;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.14))}
+.alt-card-img img{max-height:330px;max-width:290px;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.14))}
 .alt-card-img .noimg{font-family:'Open Sans Condensed',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
 .alt-card-dot{position:absolute;top:10px;left:10px;width:10px;height:10px;border-radius:50%}
-.alt-card-name{font-family:'Roboto Slab',serif;font-weight:700;font-size:14.5px;color:var(--dark);margin-bottom:7px;line-height:1.3}
-.alt-card-pres{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-bottom:9px}
+.alt-card-name{font-family:'Roboto Slab',serif;font-weight:700;font-size:16px;color:var(--dark);margin-bottom:8px;line-height:1.3}
+.alt-card-pres{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-bottom:10px}
 .alt-card-cta{font-family:'Open Sans Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tierra);text-decoration:none}
 .alt-card-cta:hover{text-decoration:underline}
-.alt-car-nav{position:absolute;top:104px;width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 16px rgba(30,24,16,.14);z-index:5;transition:all .15s}
+.alt-car-nav{position:absolute;top:150px;width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 16px rgba(30,24,16,.14);z-index:5;transition:all .15s}
 .alt-car-nav:hover{border-color:var(--tierra);transform:translateY(-1px)}
-.alt-car-nav svg{width:18px;height:18px;stroke:var(--tierra);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.alt-car-prev{left:-21px}
-.alt-car-next{right:-21px}
+.alt-car-nav svg{width:20px;height:20px;stroke:var(--tierra);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.alt-car-prev{left:-23px}
+.alt-car-next{right:-23px}
 @media(max-width:768px){
   .alt-hero{padding:92px 0 32px}
   .alt-tab{font-size:15px;padding:12px 24px}
-  .alt-card{flex:0 0 72%}
-  .alt-card-img{height:210px}
-  .alt-card-img img{max-height:172px;max-width:150px}
+  .alt-card{flex:0 0 80%}
+  .alt-card-img{height:290px}
+  .alt-card-img img{max-height:260px;max-width:230px}
   .alt-car-nav{display:none}
 }
 """
