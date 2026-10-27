@@ -101,21 +101,35 @@ CSS_EXTRA = """
 .alt-tab{display:inline-flex;align-items:center;gap:10px;color:#fff;font-family:'Roboto Slab',serif;font-weight:700;font-size:18px;letter-spacing:.3px;padding:14px 34px;border-radius:0 0 14px 14px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
 .alt-tab svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .alt-desc{text-align:center;color:var(--muted);font-size:13px;max-width:460px;margin:-20px auto 30px}
-.alt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:22px 16px;padding-bottom:16px}
-.alt-card{text-align:center}
-.alt-card-img{position:relative;height:150px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 10px rgba(30,24,16,.06);transition:transform .2s}
+
+/* ---- Carrusel de productos por línea ---- */
+.alt-carousel{position:relative}
+.alt-grid{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 2px 20px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--tierra) transparent}
+.alt-grid::-webkit-scrollbar{height:6px}
+.alt-grid::-webkit-scrollbar-track{background:transparent}
+.alt-grid::-webkit-scrollbar-thumb{background:var(--tierra);border-radius:3px}
+.alt-card{flex:0 0 272px;scroll-snap-align:start;text-align:center}
+.alt-card-img{position:relative;height:250px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:14px;margin-bottom:14px;box-shadow:0 2px 10px rgba(30,24,16,.06);transition:transform .2s}
 .alt-card:hover .alt-card-img{transform:translateY(-3px);box-shadow:0 10px 22px rgba(30,24,16,.1)}
-.alt-card-img img{max-height:118px;max-width:104px;object-fit:contain;filter:drop-shadow(0 4px 8px rgba(0,0,0,.12))}
-.alt-card-img .noimg{font-family:'Open Sans Condensed',sans-serif;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
-.alt-card-dot{position:absolute;top:8px;left:8px;width:9px;height:9px;border-radius:50%}
-.alt-card-name{font-family:'Roboto Slab',serif;font-weight:700;font-size:12.5px;color:var(--dark);margin-bottom:6px;line-height:1.3}
-.alt-card-pres{display:flex;flex-wrap:wrap;gap:3px;justify-content:center;margin-bottom:8px}
-.alt-card-cta{font-family:'Open Sans Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tierra);text-decoration:none}
+.alt-card-img img{max-height:208px;max-width:184px;object-fit:contain;filter:drop-shadow(0 6px 12px rgba(0,0,0,.14))}
+.alt-card-img .noimg{font-family:'Open Sans Condensed',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.alt-card-dot{position:absolute;top:10px;left:10px;width:10px;height:10px;border-radius:50%}
+.alt-card-name{font-family:'Roboto Slab',serif;font-weight:700;font-size:14.5px;color:var(--dark);margin-bottom:7px;line-height:1.3}
+.alt-card-pres{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-bottom:9px}
+.alt-card-cta{font-family:'Open Sans Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tierra);text-decoration:none}
 .alt-card-cta:hover{text-decoration:underline}
+.alt-car-nav{position:absolute;top:104px;width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 16px rgba(30,24,16,.14);z-index:5;transition:all .15s}
+.alt-car-nav:hover{border-color:var(--tierra);transform:translateY(-1px)}
+.alt-car-nav svg{width:18px;height:18px;stroke:var(--tierra);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.alt-car-prev{left:-21px}
+.alt-car-next{right:-21px}
 @media(max-width:768px){
   .alt-hero{padding:92px 0 32px}
   .alt-tab{font-size:15px;padding:12px 24px}
-  .alt-grid{grid-template-columns:repeat(2,1fr);gap:18px 12px}
+  .alt-card{flex:0 0 72%}
+  .alt-card-img{height:210px}
+  .alt-card-img img{max-height:172px;max-width:150px}
+  .alt-car-nav{display:none}
 }
 """
 
@@ -134,15 +148,25 @@ def card_html(p, color):
       <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div>"""
 
+ARROW_L = '<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>'
+ARROW_R = '<svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>'
+
 sections = []
 for l in LINEAS:
     cards = "".join(card_html(p, l["color"]) for p in l["productos"])
+    grid_id = f"grid-{l['id']}"
+    nav_html = ""
+    if len(l["productos"]) > 3:
+        nav_html = f"""<button type="button" class="alt-car-nav alt-car-prev" data-target="{grid_id}" aria-label="Anterior">{ARROW_L}</button><button type="button" class="alt-car-nav alt-car-next" data-target="{grid_id}" aria-label="Siguiente">{ARROW_R}</button>"""
     sections.append(f"""
 <div class="alt-linea" id="{l['id']}">
   <div class="container">
     <div class="alt-tab-row fi"><span class="alt-tab" style="background:{l['color']}"><svg viewBox="0 0 24 24">{ICONS.get(l['id'],'')}</svg>{l['nombre']}</span></div>
     <p class="alt-desc fi">{l['desc']}</p>
-    <div class="alt-grid">{cards}</div>
+    <div class="alt-carousel fi">
+      {nav_html}
+      <div class="alt-grid" id="{grid_id}">{cards}</div>
+    </div>
   </div>
 </div>""")
 
@@ -192,6 +216,14 @@ document.getElementById('ham').addEventListener('click',()=>{document.getElement
 function closeMob(){document.getElementById('mob-nav').classList.remove('open')}
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')});},{threshold:0.05})
 document.querySelectorAll('.fi').forEach(el=>obs.observe(el))
+document.querySelectorAll('.alt-car-nav').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const grid=document.getElementById(btn.dataset.target);
+    const card=grid.querySelector('.alt-card');
+    const step=card?(card.getBoundingClientRect().width+22)*2:560;
+    grid.scrollBy({left:btn.classList.contains('alt-car-prev')?-step:step,behavior:'smooth'});
+  });
+});
 </script>
 """
 
