@@ -62,22 +62,30 @@ img{max-width:100%;height:auto}
 .page-hero p{font-size:15px;color:rgba(255,255,255,.55);max-width:520px;line-height:1.75;font-weight:300}
 /* HISTORIA */
 .historia{padding:80px 0;background:#fff}
-.historia-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.historia-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .historia-text h2{font-family:'Roboto Slab',serif;font-size:clamp(22px,3vw,32px);color:var(--dark);margin-bottom:16px;line-height:1.2}
 .historia-text p{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:14px}
-.historia-img{position:relative}
-.historia-img img{width:100%;border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.12)}
-/* TIMELINE */
-.timeline-sec{padding:72px 0;background:var(--crema2)}
-.timeline-sec h2{font-family:'Roboto Slab',serif;font-size:clamp(22px,3vw,32px);color:var(--dark);margin-bottom:48px}
-.timeline{position:relative;padding-left:40px;max-width:680px}
-.timeline::before{content:'';position:absolute;left:14px;top:8px;bottom:8px;width:2px;background:var(--mostaza)}
-.tl-item{position:relative;margin-bottom:44px}
-.tl-item:last-child{margin-bottom:0}
-.tl-dot{position:absolute;left:-33px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--tierra);border:3px solid var(--mostaza);z-index:1}
-.tl-year{font-family:'Roboto Slab',serif;font-size:22px;font-weight:900;color:var(--tierra);margin-bottom:4px}
-.tl-title{font-size:15px;font-weight:600;color:var(--dark);margin-bottom:6px}
-.tl-desc{font-size:13px;color:var(--muted);line-height:1.75}
+.historia-feature{position:relative;background:var(--crema2);border-radius:12px;padding:40px;overflow:hidden;display:flex;align-items:stretch;gap:20px;min-height:440px}
+.hf-content{flex:0 0 170px;display:flex;flex-direction:column;justify-content:center}
+.hf-year{font-family:'Roboto Slab',serif;font-size:clamp(48px,6.5vw,72px);font-weight:900;color:var(--tierra);line-height:1;letter-spacing:-1px}
+.hf-eyebrow{font-family:'Open Sans Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--mostaza);margin-top:10px}
+.hf-place{font-size:13px;color:var(--muted);margin-top:5px}
+.hf-divider{width:36px;height:2px;background:var(--mostaza);margin:22px 0}
+.hf-quote{font-family:'Roboto Slab',serif;font-style:italic;font-size:14px;color:var(--dark);line-height:1.6}
+.hf-figure{flex:1;display:flex;align-items:flex-end;justify-content:center;min-width:0}
+.hf-figure img{max-height:100%;max-width:100%;width:auto;object-fit:contain}
+/* EVOLUCION DE MARCA */
+.evolucion-sec{padding:72px 0;background:var(--crema2)}
+.evolucion-sec h2{font-family:'Roboto Slab',serif;font-size:clamp(22px,3vw,32px);color:var(--dark);margin-bottom:10px}
+.evolucion-sub{font-size:14px;color:var(--muted);max-width:560px;line-height:1.75;margin-bottom:48px}
+.evolucion-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.evo-stage{text-align:center;padding:0 30px}
+.evo-stage:not(:first-child){border-left:1px solid var(--border)}
+.evo-logo-wrap{height:64px;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.evo-logo-wrap img{max-height:100%;max-width:100%;width:auto;object-fit:contain}
+.evo-year{font-family:'Open Sans Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--tierra);margin-bottom:8px}
+.evo-title{font-family:'Roboto Slab',serif;font-size:17px;font-weight:700;color:var(--dark);margin-bottom:9px}
+.evo-desc{font-size:13px;color:var(--muted);line-height:1.75;max-width:230px;margin:0 auto}
 /* CONDUCCION */
 .conduccion{padding:72px 0;background:#fff}
 .conduccion h2{font-family:'Roboto Slab',serif;font-size:clamp(22px,3vw,32px);color:var(--dark);margin-bottom:12px}
@@ -98,7 +106,7 @@ img{max-width:100%;height:auto}
 /* VALORES */
 .valores-sec{padding:72px 0;background:var(--crema2)}
 .valores-sec h2{font-family:'Roboto Slab',serif;font-size:clamp(22px,3vw,32px);color:var(--dark);margin-bottom:40px}
-.valores-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.valores-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .val-card{padding:26px 22px;border-radius:7px;border:1px solid var(--border);background:var(--crema);transition:all .22s}
 .val-card:hover{border-color:var(--mostaza);transform:translateY(-2px)}
 .val-icon{width:44px;height:44px;border-radius:9px;background:rgba(192,174,108,.15);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
@@ -185,6 +193,14 @@ footer{background:#111009;padding:48px 0 24px}
   .historia-grid{grid-template-columns:1fr}
   .reels-grid{grid-template-columns:1fr 1fr}
   .proc-grid{grid-template-columns:1fr 1fr}
+  .evolucion-grid{grid-template-columns:1fr;row-gap:40px}
+  .evo-stage{padding:0}
+  .evo-stage:not(:first-child){border-left:none;border-top:1px solid var(--border);padding-top:36px}
+  .valores-grid{grid-template-columns:1fr 1fr}
+  .historia-feature{flex-direction:column;text-align:center;padding:36px 28px}
+  .hf-content{flex:0 0 auto;align-items:center;max-width:none}
+  .hf-divider{margin:20px auto}
+  .hf-figure{flex:0 0 260px;height:260px;width:100%}
 }
 @media(max-width:768px){
   .navbar-inner{padding:0 16px}.nav-links,.nav-right{display:none}.hamburger{display:flex}
@@ -261,49 +277,49 @@ footer{background:#111009;padding:48px 0 24px}
       <div class="historia-text fi">
         <div class="eyebrow" style="color:var(--tierra);margin-bottom:10px">Nuestra historia</div>
         <h2>Una historia de trabajo,<br>familia y constancia</h2>
-        <p>Todo empezó en 1959, cuando la familia García dio sus primeros pasos en el mercado de las especias y los condimentos en el Gran Buenos Aires. Lo que comenzó como un emprendimiento familiar fue creciendo de a poco, sin apuros, con el mismo criterio de siempre: producto de calidad, precio justo, trato directo.</p>
-        <p>En 2010, con la creación de Sierras Marianas S.A., la empresa inicio una nueva etapa de crecimiento y profesionalización, manteniendo intactos los valores que la fundaron. Hoy somos una empresa con más de 100 productos, 9 líneas y presencia en todo el país.</p>
-        <p>Seguimos siendo la misma empresa familiar de siempre. Eso no cambia.</p>
+        <p>Todo empezó en 1959, cuando la familia García dio sus primeros pasos en el mercado de las especias y los condimentos en el Gran Buenos Aires. Un emprendimiento familiar que fue creciendo de a poco, sin apuros, siempre con el mismo criterio: producto de calidad, precio justo, trato directo.</p>
+        <p>Esa misma convicción nos trajo hasta acá. Seguimos siendo la empresa familiar de siempre, con el mismo apellido al frente y la misma forma de trabajar.</p>
       </div>
-      <div class="historia-img fi" style="position:relative">
-        <img src="assets/img/nosotros/historia-infografia.jpg" alt="Historia de Productos Centurión — trayectoria desde 1959" style="border-radius:8px;box-shadow:0 12px 40px rgba(0,0,0,.15)">
-  <div style="position:absolute;bottom:-12px;right:-12px;background:var(--tierra);color:#fff;border-radius:6px;padding:14px 18px;font-family:'Roboto Slab',serif;font-size:13px;font-weight:700;line-height:1.3;box-shadow:0 6px 16px rgba(142,71,53,.3)">Más de 65 años<br><span style="font-size:11px;font-weight:400;font-family:'Open Sans',sans-serif;opacity:.8">en el mercado argentino</span></div>
+      <div class="historia-feature fi">
+        <div class="hf-content">
+          <div class="hf-year">1959</div>
+          <div class="hf-eyebrow">El año que empezó todo</div>
+          <div class="hf-place">Gran Buenos Aires · Familia García</div>
+          <div class="hf-divider"></div>
+          <p class="hf-quote">"Producto de calidad, precio justo, trato directo."</p>
+        </div>
+        <div class="hf-figure"><img src="assets/img/logos/centurion-figura-tierra.png" alt="Ilustración del centurión, figura histórica de la identidad de marca, presente en los sobres de producto" loading="lazy"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TIMELINE -->
-<section class="timeline-sec">
+<!-- EVOLUCION DE MARCA -->
+<section class="evolucion-sec">
   <div class="container">
     <div class="fi">
-      <div class="eyebrow" style="color:var(--tierra);margin-bottom:10px">Nuestra trayectoria</div>
-      <h2>Hitos que nos definen</h2>
+      <div class="eyebrow" style="color:var(--tierra);margin-bottom:10px">Identidad de marca</div>
+      <h2>Una marca que creció con nosotros</h2>
+      <p class="evolucion-sub">Tres identidades, una misma historia: la de una empresa familiar que nunca dejó de crecer.</p>
     </div>
-    <div class="timeline">
-      <div class="tl-item fi">
-        <div class="tl-dot"></div>
-        <div class="tl-year">1959</div>
-        <div class="tl-title">El comienzo</div>
-        <p class="tl-desc">La familia García inicia su actividad en el mercado de las especias y los condimentos en el Gran Buenos Aires. Primeros productos: pimentón, orégano y aji molido. El motor desde el primer día: calidad y trato directo.</p>
+    <div class="evolucion-grid">
+      <div class="evo-stage fi">
+        <div class="evo-logo-wrap"><img src="assets/img/logos/logo-1959.png" alt="Primer logo de Productos Centurión, el nombre de la empresa en letras negras" loading="lazy"></div>
+        <div class="evo-year">1959</div>
+        <h3 class="evo-title">Los comienzos</h3>
+        <p class="evo-desc">La familia García inicia su actividad en el mercado de las especias y los condimentos en el Gran Buenos Aires.</p>
       </div>
-      <div class="tl-item fi">
-        <div class="tl-dot"></div>
-        <div class="tl-year">Décadas de 1970-1990</div>
-        <div class="tl-title">Crecimiento y expansión de líneas</div>
-        <p class="tl-desc">Incorporación de nuevas especias, hierbas y los primeros condimentos compuestos. La red de clientes crece en todo el GBA. Se suman distribuidores y autoservicios en el interior del país.</p>
+      <div class="evo-stage fi">
+        <div class="evo-logo-wrap"><img src="assets/img/logos/logo-2010.png" alt="Logo de Centurión en rojo y amarillo" loading="lazy"></div>
+        <div class="evo-year">2010</div>
+        <h3 class="evo-title">Una nueva etapa</h3>
+        <p class="evo-desc">Se constituye Sierras Marianas S.A. para impulsar una nueva etapa de crecimiento y profesionalización.</p>
       </div>
-      <div class="tl-item fi">
-        <div class="tl-dot"></div>
-        <div class="tl-year">2010</div>
-        <div class="tl-title">Nace Sierras Marianas S.A.</div>
-        <p class="tl-desc">Constitución formal de Sierras Marianas S.A. para impulsar una nueva etapa de crecimiento. Se profesionalizan los procesos, se incorporan nuevas líneas — instantáneos, repostería, postres — y se renueva la identidad de la marca.</p>
-      </div>
-      <div class="tl-item fi">
-        <div class="tl-dot"></div>
-        <div class="tl-year">Hoy</div>
-        <div class="tl-title">Presentes en todo el país</div>
-        <p class="tl-desc">Más de 100 productos en 9 líneas. Planta propia en el Gran Buenos Aires. Distribución en GBA, interior y cadenas de supermercados. Ricardo y Rubén García, junto a la siguiente generación de la familia, conducen la empresa con el mismo espíritu fundacional.</p>
+      <div class="evo-stage fi">
+        <div class="evo-logo-wrap"><img src="assets/img/logos/centurion-logo.png" alt="Logo actual de Centurión, óvalo rojo con el texto Desde 1959" loading="lazy"></div>
+        <div class="evo-year">Hoy</div>
+        <h3 class="evo-title">Centurión hoy</h3>
+        <p class="evo-desc">Más de 100 productos en 9 líneas, con distribución en todo el país.</p>
       </div>
     </div>
   </div>
@@ -315,7 +331,7 @@ footer{background:#111009;padding:48px 0 24px}
     <div class="fi">
       <div class="eyebrow" style="color:var(--tierra);margin-bottom:10px">Quienes conducen</div>
       <h2>Una empresa de familia</h2>
-      <p class="conduccion-sub">Centurión es hoy conducida por Ricardo y Rubén García, quienes junto a sus hijos mantienen vivo el espíritu que fundó la empresa en 1959: trabajo serio, producto de calidad y relación directa con cada cliente.</p>
+      <p class="conduccion-sub">Detrás de cada una de esas etapas está la misma familia. Hoy Centurión es conducida por Ricardo y Rubén García, quienes junto a sus hijos mantienen vivo el espíritu que fundó la empresa en 1959: trabajo serio, producto de calidad y relación directa con cada cliente.</p>
     </div>
     <div class="equipo-grid">
       <div class="eq-card fi">
