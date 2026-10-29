@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Productos | Centurión — por línea</title>
-<meta content="Catálogo completo de especias, condimentos, hierbas, salsas, instantáneos y más. Más de 100 productos en 9 líneas para mayoristas y gastronomía." name="description"/>
+<meta content="Catálogo completo de especias, condimentos, hierbas, salsas, instantáneos y más. Más de 100 productos en 8 líneas para mayoristas y gastronomía." name="description"/>
 <link href="assets/img/logos/favicon.png" rel="icon" type="image/png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700;900&amp;family=Open+Sans:wght@300;400;600&amp;family=Open+Sans+Condensed:wght@300;700&amp;family=Roboto+Condensed:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -84,6 +84,10 @@ footer{background:#111009;padding:48px 0 24px}
 .or-sep span{font-family:'Open Sans Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
 .fi{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
 .fi.vis{opacity:1;transform:translateY(0)}
+.fi.side-l{transform:translateX(-56px)}
+.fi.side-r{transform:translateX(56px)}
+.fi.side-l,.fi.side-r{transition:opacity .6s ease,transform .6s ease}
+.fi.side-l.vis,.fi.side-r.vis{opacity:1;transform:translateX(0)}
 .page-hero{background:var(--dark2);padding:112px 0 52px;position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 50%,rgba(192,174,108,.08),transparent 60%)}
 .page-hero-inner{position:relative;z-index:2}
@@ -117,8 +121,9 @@ footer{background:#111009;padding:48px 0 24px}
 .prod-card-name{font-family:'Roboto Slab',serif;font-size:11px;font-weight:700;color:var(--dark);margin-bottom:6px;line-height:1.3}
 .prod-card-pres{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:8px}
 .pres-pill{font-family:'Roboto Condensed',sans-serif;font-size:9px;padding:2px 5px;border-radius:2px;background:var(--crema2);color:var(--muted);border:1px solid var(--border)}
-.prod-card-cta{font-family:'Open Sans Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tierra);text-decoration:none;display:inline-flex;align-items:center;gap:3px;margin-top:auto;transition:gap .18s}
-.prod-card-cta:hover{gap:6px}
+.prod-card-tip{display:flex;gap:6px;align-items:flex-start;margin-top:auto;padding-top:8px;border-top:1px dashed var(--border)}
+.prod-card-tip img{width:30px;height:auto;flex-shrink:0;margin-top:1px}
+.prod-card-tip p{font-size:8.5px;line-height:1.35;color:var(--muted);margin:0}
 .prod-cta-band{background:var(--dark2);padding:44px;text-align:center;border-radius:7px;margin-top:12px}
 .prod-cta-band h2{font-family:'Roboto Slab',serif;font-size:20px;color:#fff;margin-bottom:8px}
 .prod-cta-band p{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:20px}
@@ -158,6 +163,10 @@ footer{background:#111009;padding:48px 0 24px}
 .alt-pill span{line-height:1.25}
 .alt-wrap{background:var(--crema2)}
 .alt-linea{padding:46px 0 10px;scroll-margin-top:84px}
+.fi.side-l{transform:translateX(-56px)}
+.fi.side-r{transform:translateX(56px)}
+.fi.side-l,.fi.side-r{transition:opacity .6s ease,transform .6s ease}
+.fi.side-l.vis,.fi.side-r.vis{opacity:1;transform:translateX(0)}
 .alt-head{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:14px}
 .alt-head-icon{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 2px 10px rgba(30,24,16,.07)}
 .alt-head-icon svg{width:27px;height:27px;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
@@ -179,8 +188,6 @@ footer{background:#111009;padding:48px 0 24px}
 .alt-card-dot{position:absolute;top:10px;left:10px;width:10px;height:10px;border-radius:50%}
 .alt-card-name{font-family:'Roboto Slab',serif;font-weight:700;font-size:16px;color:var(--dark);margin-bottom:8px;line-height:1.3}
 .alt-card-pres{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-bottom:10px}
-.alt-card-cta{font-family:'Open Sans Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tierra);text-decoration:none}
-.alt-card-cta:hover{text-decoration:underline}
 .alt-car-nav{position:absolute;top:150px;width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 16px rgba(30,24,16,.14);z-index:5;transition:all .15s}
 .alt-car-nav:hover{border-color:var(--tierra);transform:translateY(-1px)}
 .alt-car-nav svg{width:20px;height:20px;stroke:var(--tierra);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
@@ -251,19 +258,19 @@ footer{background:#111009;padding:48px 0 24px}
   <div class="container">
     <div class="eyebrow" style="display:flex;align-items:center;gap:10px">Catálogo completo</div>
     <h1>Nuestras líneas de producto</h1>
-    <p>9 líneas, 74+ referencias. Sin precios en la web — consultá por WhatsApp o descargá el catálogo mayorista.</p>
+    <p>8 líneas, 74+ referencias. Sin precios en la web — consultá por WhatsApp o descargá el catálogo mayorista.</p>
   </div>
 </section>
 
 <div class="alt-pillbar">
-  <div class="container"><div class="alt-pillgrid"><a href="#prod-especias" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M9 3c3 0 4.2 2.1 4.2 2.1S16 12.5 12 18.5c-2 3-6.7 2-7.6-1.8C2.8 11.8 6 3 9 3z"/><path d="M9 3c1-1.2 3-2 4-1"/></svg><span>Especias</span></a><a href="#prod-hierbas" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M4 20C4 10 12 4 20 4c0 8-6 16-16 16z"/><path d="M4 20 14 10"/></svg><span>Hierbas aromáticas</span></a><a href="#prod-condimentos" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M8 2h8l-1 4H9z"/><path d="M8 6h8l1 13.5A2 2 0 0 1 15 22H9a2 2 0 0 1-2-2.5z"/><circle cx="10" cy="11" r=".7" fill="currentColor" stroke="none"/><circle cx="14" cy="11" r=".7" fill="currentColor" stroke="none"/><circle cx="12" cy="14.5" r=".7" fill="currentColor" stroke="none"/></svg><span>Condimentos</span></a><a href="#prod-deshidratados" class="alt-pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg><span>Deshidratados</span></a><a href="#prod-salsas" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M9 2h6v3.2l2 2.3V20a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V7.5l2-2.3z"/><path d="M7 12h10"/></svg><span>Salsas</span></a><a href="#prod-reposteria" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M12 2v8"/><path d="M8 10c-2.2 0-3.3 2-3.3 4.3S6.5 18 8 18M16 10c2.2 0 3.3 2 3.3 4.3S17.5 18 16 18M12 10c-1.3 1.6-1.3 6.4 0 10M12 10c1.3 1.6 1.3 6.4 0 10"/><path d="M8 20h8"/></svg><span>Repostería y cocina</span></a><a href="#prod-instantaneos" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M3 11h18l-1.6 7.2A2 2 0 0 1 17.5 20h-11a2 2 0 0 1-1.9-1.8z"/><path d="M12 11V8M9 5c0-1 1-1.2 1-2.2M12 5c0-1 1-1.2 1-2.2M15 5c0-1 1-1.2 1-2.2"/></svg><span>Instantáneos</span></a><a href="#prod-postres" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M6 3h12l-1.1 15.2A2 2 0 0 1 14.9 20H9.1a2 2 0 0 1-2-1.8z"/><path d="M6 8h12"/><path d="M12 8v-5"/></svg><span>Postres y gelatinas</span></a><a href="#prod-frutos" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M12 9c3.3 0 5.3 2.6 5.3 6a5.3 5.3 0 0 1-10.6 0c0-3.4 2-6 5.3-6z"/><path d="M8.3 9c0-2.2 1.3-4 3.7-4s3.7 1.8 3.7 4"/></svg><span>Frutos secos</span></a></div></div>
+  <div class="container"><div class="alt-pillgrid"><a href="#prod-especias" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M9 3c3 0 4.2 2.1 4.2 2.1S16 12.5 12 18.5c-2 3-6.7 2-7.6-1.8C2.8 11.8 6 3 9 3z"/><path d="M9 3c1-1.2 3-2 4-1"/></svg><span>Especias</span></a><a href="#prod-hierbas" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M4 20C4 10 12 4 20 4c0 8-6 16-16 16z"/><path d="M4 20 14 10"/></svg><span>Hierbas aromáticas</span></a><a href="#prod-condimentos" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M8 2h8l-1 4H9z"/><path d="M8 6h8l1 13.5A2 2 0 0 1 15 22H9a2 2 0 0 1-2-2.5z"/><circle cx="10" cy="11" r=".7" fill="currentColor" stroke="none"/><circle cx="14" cy="11" r=".7" fill="currentColor" stroke="none"/><circle cx="12" cy="14.5" r=".7" fill="currentColor" stroke="none"/></svg><span>Condimentos</span></a><a href="#prod-deshidratados" class="alt-pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg><span>Deshidratados</span></a><a href="#prod-salsas" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M9 2h6v3.2l2 2.3V20a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V7.5l2-2.3z"/><path d="M7 12h10"/></svg><span>Salsas</span></a><a href="#prod-reposteria" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M12 2v8"/><path d="M8 10c-2.2 0-3.3 2-3.3 4.3S6.5 18 8 18M16 10c2.2 0 3.3 2 3.3 4.3S17.5 18 16 18M12 10c-1.3 1.6-1.3 6.4 0 10M12 10c1.3 1.6 1.3 6.4 0 10"/><path d="M8 20h8"/></svg><span>Repostería y cocina</span></a><a href="#prod-instantaneos" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M3 11h18l-1.6 7.2A2 2 0 0 1 17.5 20h-11a2 2 0 0 1-1.9-1.8z"/><path d="M12 11V8M9 5c0-1 1-1.2 1-2.2M12 5c0-1 1-1.2 1-2.2M15 5c0-1 1-1.2 1-2.2"/></svg><span>Instantáneos</span></a><a href="#prod-postres" class="alt-pill"><svg viewBox="0 0 24 24"><path d="M6 3h12l-1.1 15.2A2 2 0 0 1 14.9 20H9.1a2 2 0 0 1-2-1.8z"/><path d="M6 8h12"/><path d="M12 8v-5"/></svg><span>Postres y gelatinas</span></a></div></div>
 </div>
 
-<nav class="alt-dotnav" aria-label="Navegación por línea"><a href="#prod-especias" data-target="prod-especias" style="background:#CC1B1B;color:#CC1B1B"><span>Especias</span></a><a href="#prod-hierbas" data-target="prod-hierbas" style="background:#3A6B2A;color:#3A6B2A"><span>Hierbas aromáticas</span></a><a href="#prod-condimentos" data-target="prod-condimentos" style="background:#8E4735;color:#8E4735"><span>Condimentos</span></a><a href="#prod-deshidratados" data-target="prod-deshidratados" style="background:#7A6830;color:#7A6830"><span>Deshidratados</span></a><a href="#prod-salsas" data-target="prod-salsas" style="background:#C0390F;color:#C0390F"><span>Salsas</span></a><a href="#prod-reposteria" data-target="prod-reposteria" style="background:#C0AE6C;color:#C0AE6C"><span>Repostería y cocina</span></a><a href="#prod-instantaneos" data-target="prod-instantaneos" style="background:#E8A000;color:#E8A000"><span>Instantáneos</span></a><a href="#prod-postres" data-target="prod-postres" style="background:#9B4A9B;color:#9B4A9B"><span>Postres y gelatinas</span></a><a href="#prod-frutos" data-target="prod-frutos" style="background:#6B4A1A;color:#6B4A1A"><span>Frutos secos</span></a></nav>
+<nav class="alt-dotnav" aria-label="Navegación por línea"><a href="#prod-especias" data-target="prod-especias" style="background:#CC1B1B;color:#CC1B1B"><span>Especias</span></a><a href="#prod-hierbas" data-target="prod-hierbas" style="background:#3A6B2A;color:#3A6B2A"><span>Hierbas aromáticas</span></a><a href="#prod-condimentos" data-target="prod-condimentos" style="background:#8E4735;color:#8E4735"><span>Condimentos</span></a><a href="#prod-deshidratados" data-target="prod-deshidratados" style="background:#7A6830;color:#7A6830"><span>Deshidratados</span></a><a href="#prod-salsas" data-target="prod-salsas" style="background:#C0390F;color:#C0390F"><span>Salsas</span></a><a href="#prod-reposteria" data-target="prod-reposteria" style="background:#C0AE6C;color:#C0AE6C"><span>Repostería y cocina</span></a><a href="#prod-instantaneos" data-target="prod-instantaneos" style="background:#E8A000;color:#E8A000"><span>Instantáneos</span></a><a href="#prod-postres" data-target="prod-postres" style="background:#9B4A9B;color:#9B4A9B"><span>Postres y gelatinas</span></a></nav>
 
 <div class="alt-wrap">
 
-<div class="alt-linea" id="prod-especias">
+<div class="alt-linea fi side-l" id="prod-especias">
   <div class="container">
     <div class="alt-head fi">
       <div class="alt-head-icon" style="background:color-mix(in srgb, #CC1B1B 14%, #fff)">
@@ -279,107 +286,87 @@ footer{background:#111009;padding:48px 0 24px}
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-aji.png" alt="Ají Molido Centurión" loading="lazy"></div>
       <div class="alt-card-name">Ají Molido</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-comino.png" alt="Comino Molido Centurión" loading="lazy"></div>
       <div class="alt-card-name">Comino Molido</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-pimenton.png" alt="Pimentón Ahumado Centurión" loading="lazy"></div>
       <div class="alt-card-name">Pimentón Ahumado</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-pimenton.png" alt="Pimentón Seleccionado Centurión" loading="lazy"></div>
       <div class="alt-card-name">Pimentón Seleccionado</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-pimienta-negra.png" alt="Pimienta Negra Molida Centurión" loading="lazy"></div>
       <div class="alt-card-name">Pimienta Negra Molida</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-pimienta-negra.png" alt="Pimienta Negra en Grano Centurión" loading="lazy"></div>
       <div class="alt-card-name">Pimienta Negra en Grano</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-pimienta-negra.png" alt="Pimienta Blanca Molida Centurión" loading="lazy"></div>
       <div class="alt-card-name">Pimienta Blanca Molida</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-canela.png" alt="Canela Molida Centurión" loading="lazy"></div>
       <div class="alt-card-name">Canela Molida</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-canela.png" alt="Canela en Rama Centurión" loading="lazy"></div>
       <div class="alt-card-name">Canela en Rama</div>
       <div class="alt-card-pres"><span class="pres-pill">10g x10</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-curcuma.png" alt="Cúrcuma Centurión" loading="lazy"></div>
       <div class="alt-card-name">Cúrcuma</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-comino.png" alt="Nuez Moscada Molida Centurión" loading="lazy"></div>
       <div class="alt-card-name">Nuez Moscada Molida</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-comino.png" alt="Nuez Moscada en Grano Centurión" loading="lazy"></div>
       <div class="alt-card-name">Nuez Moscada en Grano</div>
       <div class="alt-card-pres"><span class="pres-pill">2u x50</span><span class="pres-pill">2u x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-pimenton.png" alt="Paprika Centurión" loading="lazy"></div>
       <div class="alt-card-name">Paprika</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-aji.png" alt="Cayena Roja Triturada Centurión" loading="lazy"></div>
       <div class="alt-card-name">Cayena Roja Triturada</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-curcuma.png" alt="Curry Centurión" loading="lazy"></div>
       <div class="alt-card-name">Curry</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-comino.png" alt="Coriandro Centurión" loading="lazy"></div>
       <div class="alt-card-name">Coriandro</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-canela.png" alt="Clavo de Olor en Grano Centurión" loading="lazy"></div>
       <div class="alt-card-name">Clavo de Olor en Grano</div>
       <div class="alt-card-pres"><span class="pres-pill">10g x10</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-canela.png" alt="Clavo de Olor Molido Centurión" loading="lazy"></div>
       <div class="alt-card-name">Clavo de Olor Molido</div>
       <div class="alt-card-pres"><span class="pres-pill">10g x10</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-albahaca.png" alt="Anís en Grano Centurión" loading="lazy"></div>
       <div class="alt-card-name">Anís en Grano</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#CC1B1B"></div><img src="assets/img/productos/sobre-pimienta-negra.png" alt="Pimienta Blanca en Grano Centurión" loading="lazy"></div>
       <div class="alt-card-name">Pimienta Blanca en Grano</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div></div>
     </div>
   </div>
 </div>
-<div class="alt-linea" id="prod-hierbas">
+<div class="alt-linea fi side-r" id="prod-hierbas">
   <div class="container">
     <div class="alt-head fi">
       <div class="alt-head-icon" style="background:color-mix(in srgb, #3A6B2A 14%, #fff)">
@@ -395,42 +382,35 @@ footer{background:#111009;padding:48px 0 24px}
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#3A6B2A"></div><img src="assets/img/productos/sobre-albahaca.png" alt="Albahaca Centurión" loading="lazy"></div>
       <div class="alt-card-name">Albahaca</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#3A6B2A"></div><img src="assets/img/productos/sobre-oregano.png" alt="Orégano Centurión" loading="lazy"></div>
       <div class="alt-card-name">Orégano</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#3A6B2A"></div><img src="assets/img/productos/sobre-oregano.png" alt="Romero Centurión" loading="lazy"></div>
       <div class="alt-card-name">Romero</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#3A6B2A"></div><img src="assets/img/productos/sobre-oregano.png" alt="Tomillo Centurión" loading="lazy"></div>
       <div class="alt-card-name">Tomillo</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#3A6B2A"></div><img src="assets/img/productos/sobre-oregano.png" alt="Laurel en Hojas Centurión" loading="lazy"></div>
       <div class="alt-card-name">Laurel en Hojas</div>
       <div class="alt-card-pres"><span class="pres-pill">10g x10</span><span class="pres-pill">10g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#3A6B2A"></div><img src="assets/img/productos/sobre-oregano.png" alt="Laurel Molido Centurión" loading="lazy"></div>
       <div class="alt-card-name">Laurel Molido</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x10</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#3A6B2A"></div><img src="assets/img/productos/sobre-albahaca.png" alt="Perejil Deshidratado Centurión" loading="lazy"></div>
       <div class="alt-card-name">Perejil Deshidratado</div>
       <div class="alt-card-pres"><span class="pres-pill">20g x50</span><span class="pres-pill">20g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div></div>
     </div>
   </div>
 </div>
-<div class="alt-linea" id="prod-condimentos">
+<div class="alt-linea fi side-l" id="prod-condimentos">
   <div class="container">
     <div class="alt-head fi">
       <div class="alt-head-icon" style="background:color-mix(in srgb, #8E4735 14%, #fff)">
@@ -446,42 +426,35 @@ footer{background:#111009;padding:48px 0 24px}
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#8E4735"></div><img src="assets/img/productos/sobre-adobo-pizza.png" alt="Adobo para Pizzas Centurión" loading="lazy"></div>
       <div class="alt-card-name">Adobo para Pizzas</div>
       <div class="alt-card-pres"><span class="pres-pill">20g x50</span><span class="pres-pill">20g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#8E4735"></div><img src="assets/img/productos/sobre-comino.png" alt="Condimento p/Arroz Centurión" loading="lazy"></div>
       <div class="alt-card-name">Condimento p/Arroz</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#8E4735"></div><img src="assets/img/productos/sobre-aji.png" alt="Condimento p/Aves Centurión" loading="lazy"></div>
       <div class="alt-card-name">Condimento p/Aves</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#8E4735"></div><img src="assets/img/productos/sobre-aji.png" alt="Condimento p/Empanadas Centurión" loading="lazy"></div>
       <div class="alt-card-name">Condimento p/Empanadas</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#8E4735"></div><img src="assets/img/productos/sobre-pimenton.png" alt="Condimento p/Guiso y Tallarines Centurión" loading="lazy"></div>
       <div class="alt-card-name">Condimento p/Guiso y Tallarines</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#8E4735"></div><img src="assets/img/productos/sobre-albahaca.png" alt="Condimento p/Pescados Centurión" loading="lazy"></div>
       <div class="alt-card-name">Condimento p/Pescados</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#8E4735"></div><img src="assets/img/productos/sobre-aji.png" alt="Especias Surtidas Centurión" loading="lazy"></div>
       <div class="alt-card-name">Especias Surtidas</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div></div>
     </div>
   </div>
 </div>
-<div class="alt-linea" id="prod-deshidratados">
+<div class="alt-linea fi side-r" id="prod-deshidratados">
   <div class="container">
     <div class="alt-head fi">
       <div class="alt-head-icon" style="background:color-mix(in srgb, #7A6830 14%, #fff)">
@@ -497,37 +470,31 @@ footer{background:#111009;padding:48px 0 24px}
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#7A6830"></div><img src="assets/img/productos/sobre-ajo-polvo.png" alt="Ajo en Polvo Centurión" loading="lazy"></div>
       <div class="alt-card-name">Ajo en Polvo</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#7A6830"></div><img src="assets/img/productos/sobre-ajo-polvo.png" alt="Ajo Granulado Centurión" loading="lazy"></div>
       <div class="alt-card-name">Ajo Granulado</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#7A6830"></div><img src="assets/img/productos/sobre-cebolla.png" alt="Cebolla Deshidratada Centurión" loading="lazy"></div>
       <div class="alt-card-name">Cebolla Deshidratada</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#7A6830"></div><img src="assets/img/productos/sobre-chimichurri.png" alt="Chimichurri Deshidratado Centurión" loading="lazy"></div>
       <div class="alt-card-name">Chimichurri Deshidratado</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#7A6830"></div><img src="assets/img/productos/sobre-albahaca.png" alt="Provenzal Deshidratado Centurión" loading="lazy"></div>
       <div class="alt-card-name">Provenzal Deshidratado</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#7A6830"></div><img src="assets/img/productos/sobre-albahaca.png" alt="Pesto Deshidratado Centurión" loading="lazy"></div>
       <div class="alt-card-name">Pesto Deshidratado</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div></div>
     </div>
   </div>
 </div>
-<div class="alt-linea" id="prod-salsas">
+<div class="alt-linea fi side-l" id="prod-salsas">
   <div class="container">
     <div class="alt-head fi">
       <div class="alt-head-icon" style="background:color-mix(in srgb, #C0390F 14%, #fff)">
@@ -543,27 +510,23 @@ footer{background:#111009;padding:48px 0 24px}
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0390F"></div><div class="noimg">Foto<br>pendiente</div></div>
       <div class="alt-card-name">Chimichurri Líquido Suave</div>
       <div class="alt-card-pres"><span class="pres-pill">250cc x12</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0390F"></div><div class="noimg">Foto<br>pendiente</div></div>
       <div class="alt-card-name">Chimichurri Líquido Picante</div>
       <div class="alt-card-pres"><span class="pres-pill">250cc x12</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0390F"></div><div class="noimg">Foto<br>pendiente</div></div>
       <div class="alt-card-name">Provenzal Líquido</div>
       <div class="alt-card-pres"><span class="pres-pill">250cc x12</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0390F"></div><div class="noimg">Foto<br>pendiente</div></div>
       <div class="alt-card-name">Salsa Blanca</div>
       <div class="alt-card-pres"><span class="pres-pill">40g x10</span><span class="pres-pill">40g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div></div>
     </div>
   </div>
 </div>
-<div class="alt-linea" id="prod-reposteria">
+<div class="alt-linea fi side-r" id="prod-reposteria">
   <div class="container">
     <div class="alt-head fi">
       <div class="alt-head-icon" style="background:color-mix(in srgb, #C0AE6C 14%, #fff)">
@@ -579,67 +542,59 @@ footer{background:#111009;padding:48px 0 24px}
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-coco.png" alt="Coco Rallado Centurión" loading="lazy"></div>
       <div class="alt-card-name">Coco Rallado</div>
       <div class="alt-card-pres"><span class="pres-pill">25g x50</span><span class="pres-pill">25g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-azucar-impalpable.png" alt="Azúcar Impalpable Centurión" loading="lazy"></div>
       <div class="alt-card-name">Azúcar Impalpable</div>
       <div class="alt-card-pres"><span class="pres-pill">200g x10</span><span class="pres-pill">500g x10</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-azucar-impalpable.png" alt="Azúcar Negra Centurión" loading="lazy"></div>
       <div class="alt-card-name">Azúcar Negra</div>
       <div class="alt-card-pres"><span class="pres-pill">200g x10</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-vainilla.png" alt="Extracto de Vainilla Centurión" loading="lazy"></div>
       <div class="alt-card-name">Extracto de Vainilla</div>
       <div class="alt-card-pres"><span class="pres-pill">28cc x24</span><span class="pres-pill">28cc x12</span><span class="pres-pill">100cc x24</span><span class="pres-pill">100cc x12</span><span class="pres-pill">250cc x12</span><span class="pres-pill">1 Litro</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-coco.png" alt="Grageas p/Repostería Centurión" loading="lazy"></div>
       <div class="alt-card-name">Grageas p/Repostería</div>
       <div class="alt-card-pres"><span class="pres-pill">50g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-coco.png" alt="Granas p/Repostería Centurión" loading="lazy"></div>
       <div class="alt-card-name">Granas p/Repostería</div>
       <div class="alt-card-pres"><span class="pres-pill">50g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-vainilla.png" alt="Caramelo Líquido Centurión" loading="lazy"></div>
       <div class="alt-card-name">Caramelo Líquido</div>
       <div class="alt-card-pres"><span class="pres-pill">150g x12</span><span class="pres-pill">1250g</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-azucar-impalpable.png" alt="Bicarbonato de Sodio Centurión" loading="lazy"></div>
       <div class="alt-card-name">Bicarbonato de Sodio</div>
       <div class="alt-card-pres"><span class="pres-pill">50g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-azucar-impalpable.png" alt="Polvo para Hornear Centurión" loading="lazy"></div>
       <div class="alt-card-name">Polvo para Hornear</div>
       <div class="alt-card-pres"><span class="pres-pill">50g x10</span><span class="pres-pill">50g x50</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-azucar-impalpable.png" alt="Fécula de Maíz Centurión" loading="lazy"></div>
       <div class="alt-card-name">Fécula de Maíz</div>
       <div class="alt-card-pres"><span class="pres-pill">200g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-azucar-impalpable.png" alt="Fécula de Mandioca Centurión" loading="lazy"></div>
       <div class="alt-card-name">Fécula de Mandioca</div>
       <div class="alt-card-pres"><span class="pres-pill">200g x10</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-azucar-impalpable.png" alt="Harina de Arroz Centurión" loading="lazy"></div>
       <div class="alt-card-name">Harina de Arroz</div>
       <div class="alt-card-pres"><span class="pres-pill">200g x10</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
+    </div><div class="alt-card fi">
+      <div class="alt-card-img"><div class="alt-card-dot" style="background:#C0AE6C"></div><img src="assets/img/productos/sobre-pasas.png" alt="Pasas de Uva Sultanina Centurión" loading="lazy"></div>
+      <div class="alt-card-name">Pasas de Uva Sultanina</div>
+      <div class="alt-card-pres"><span class="pres-pill">50g x50</span><span class="pres-pill">50g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
     </div></div>
     </div>
   </div>
 </div>
-<div class="alt-linea" id="prod-instantaneos">
+<div class="alt-linea fi side-l" id="prod-instantaneos">
   <div class="container">
     <div class="alt-head fi">
       <div class="alt-head-icon" style="background:color-mix(in srgb, #E8A000 14%, #fff)">
@@ -655,37 +610,35 @@ footer{background:#111009;padding:48px 0 24px}
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#E8A000"></div><img src="assets/img/productos/caja-pure-papas.png" alt="Puré de Papas Instantáneo Centurión" loading="lazy"></div>
       <div class="alt-card-name">Puré de Papas Instantáneo</div>
       <div class="alt-card-pres"><span class="pres-pill">100g x50</span><span class="pres-pill">100g x10</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#E8A000"></div><img src="assets/img/productos/caja-sopa-esparrago.png" alt="Sopa de Espárrago Centurión" loading="lazy"></div>
       <div class="alt-card-name">Sopa de Espárrago</div>
       <div class="alt-card-pres"><span class="pres-pill">65g (5 sobres)</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#E8A000"></div><img src="assets/img/productos/caja-sopa-esparrago.png" alt="Sopa de Arvejas Centurión" loading="lazy"></div>
       <div class="alt-card-name">Sopa de Arvejas</div>
       <div class="alt-card-pres"><span class="pres-pill">65g (5 sobres)</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#E8A000"></div><img src="assets/img/productos/caja-sopa-esparrago.png" alt="Sopa de Choclo Centurión" loading="lazy"></div>
       <div class="alt-card-name">Sopa de Choclo</div>
       <div class="alt-card-pres"><span class="pres-pill">65g (5 sobres)</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#E8A000"></div><img src="assets/img/productos/caja-sopa-esparrago.png" alt="Sopa de Vegetales Centurión" loading="lazy"></div>
       <div class="alt-card-name">Sopa de Vegetales</div>
       <div class="alt-card-pres"><span class="pres-pill">65g (5 sobres)</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#E8A000"></div><img src="assets/img/productos/caja-caldo-gallina.png" alt="Caldo Sabor Gallina Centurión" loading="lazy"></div>
       <div class="alt-card-name">Caldo Sabor Gallina</div>
       <div class="alt-card-pres"><span class="pres-pill">114g (12 cubos)</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
+    </div><div class="alt-card fi">
+      <div class="alt-card-img"><div class="alt-card-dot" style="background:#E8A000"></div><img src="assets/img/productos/sobre-cacao.png" alt="Alimento de Cacao Centurión" loading="lazy"></div>
+      <div class="alt-card-name">Alimento de Cacao</div>
+      <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
     </div></div>
     </div>
   </div>
 </div>
-<div class="alt-linea" id="prod-postres">
+<div class="alt-linea fi side-r" id="prod-postres">
   <div class="container">
     <div class="alt-head fi">
       <div class="alt-head-icon" style="background:color-mix(in srgb, #9B4A9B 14%, #fff)">
@@ -701,78 +654,42 @@ footer{background:#111009;padding:48px 0 24px}
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#9B4A9B"></div><img src="assets/img/productos/caja-flan.png" alt="Flan Vainilla Centurión" loading="lazy"></div>
       <div class="alt-card-name">Flan Vainilla</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#9B4A9B"></div><img src="assets/img/productos/caja-flan.png" alt="Flan Chocolate Centurión" loading="lazy"></div>
       <div class="alt-card-name">Flan Chocolate</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#9B4A9B"></div><img src="assets/img/productos/caja-flan.png" alt="Postre Vainilla Centurión" loading="lazy"></div>
       <div class="alt-card-name">Postre Vainilla</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#9B4A9B"></div><img src="assets/img/productos/caja-flan.png" alt="Postre Chocolate Centurión" loading="lazy"></div>
       <div class="alt-card-name">Postre Chocolate</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#9B4A9B"></div><img src="assets/img/productos/caja-gelatina.png" alt="Gelatina Frutilla Centurión" loading="lazy"></div>
       <div class="alt-card-name">Gelatina Frutilla</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#9B4A9B"></div><img src="assets/img/productos/caja-gelatina.png" alt="Gelatina Durazno Centurión" loading="lazy"></div>
       <div class="alt-card-name">Gelatina Durazno</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#9B4A9B"></div><img src="assets/img/productos/caja-gelatina.png" alt="Gelatina Naranja Centurión" loading="lazy"></div>
       <div class="alt-card-name">Gelatina Naranja</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#9B4A9B"></div><img src="assets/img/productos/caja-gelatina.png" alt="Gelatina Anana Centurión" loading="lazy"></div>
       <div class="alt-card-name">Gelatina Anana</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#9B4A9B"></div><img src="assets/img/productos/caja-gelatina.png" alt="Gelatina Cereza Centurión" loading="lazy"></div>
       <div class="alt-card-name">Gelatina Cereza</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div><div class="alt-card fi">
       <div class="alt-card-img"><div class="alt-card-dot" style="background:#9B4A9B"></div><img src="assets/img/productos/caja-gelatina.png" alt="Gelatina Sin Sabor Centurión" loading="lazy"></div>
       <div class="alt-card-name">Gelatina Sin Sabor</div>
       <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
-    </div></div>
-    </div>
-  </div>
-</div>
-<div class="alt-linea" id="prod-frutos">
-  <div class="container">
-    <div class="alt-head fi">
-      <div class="alt-head-icon" style="background:color-mix(in srgb, #6B4A1A 14%, #fff)">
-        <svg viewBox="0 0 24 24" style="stroke:#6B4A1A"><path d="M12 9c3.3 0 5.3 2.6 5.3 6a5.3 5.3 0 0 1-10.6 0c0-3.4 2-6 5.3-6z"/><path d="M8.3 9c0-2.2 1.3-4 3.7-4s3.7 1.8 3.7 4"/></svg>
-      </div>
-      <h2>Frutos secos</h2>
-      <div class="alt-head-rule" style="background:#6B4A1A"></div>
-    </div>
-    <p class="alt-desc fi">Frutos secos y complementos para repostería e industria.</p>
-    <div class="alt-carousel fi">
-      
-      <div class="alt-grid" id="grid-prod-frutos"><div class="alt-card fi">
-      <div class="alt-card-img"><div class="alt-card-dot" style="background:#6B4A1A"></div><img src="assets/img/productos/sobre-pasas.png" alt="Pasas de Uva Sultanina Centurión" loading="lazy"></div>
-      <div class="alt-card-name">Pasas de Uva Sultanina</div>
-      <div class="alt-card-pres"><span class="pres-pill">50g x50</span><span class="pres-pill">50g x10</span><span class="pres-pill">500g</span><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
-    </div><div class="alt-card fi">
-      <div class="alt-card-img"><div class="alt-card-dot" style="background:#6B4A1A"></div><img src="assets/img/productos/sobre-cacao.png" alt="Alimento de Cacao Centurión" loading="lazy"></div>
-      <div class="alt-card-name">Alimento de Cacao</div>
-      <div class="alt-card-pres"><span class="pres-pill">1 Kg</span></div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div></div>
     </div>
   </div>

@@ -90,15 +90,23 @@ footer{background:#111009;padding:60px 0 28px}
 .page-hero{background:var(--dark2);padding:120px 0 64px;position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 50%,rgba(192,174,108,.08),transparent 60%)}
 .page-hero-inner{position:relative;z-index:2}
+.page-hero-grid{display:grid;grid-template-columns:4fr 8fr;gap:48px;align-items:center}
+.page-hero-logo-col{display:flex;justify-content:center}
 .page-hero-eyebrow{font-family:'Open Sans Condensed',sans-serif;font-size:11px;letter-spacing:3.5px;text-transform:uppercase;font-weight:700;color:var(--mostaza);margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .page-hero-eyebrow::before{content:'';width:22px;height:2px;background:var(--mostaza);flex-shrink:0}
 .page-hero h1{font-family:'Roboto Slab',serif;font-size:clamp(30px,5vw,52px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:14px}
-.page-hero p{font-size:15px;color:rgba(255,255,255,.55);max-width:520px;line-height:1.75;font-weight:300}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.55);line-height:1.75;font-weight:300}
+.rec-hero-logo{width:100%;max-width:200px;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.3))}
 @media(max-width:1024px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){
   .navbar-inner{padding:0 20px}.nav-links,.nav-right{display:none}.hamburger{display:flex}
   .container{padding:0 20px}.foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column;text-align:center}
-  .form-row{grid-template-columns:1fr}.page-hero{padding:100px 0 48px}}
+  .form-row{grid-template-columns:1fr}.page-hero{padding:100px 0 48px}
+  .page-hero-grid{grid-template-columns:1fr;text-align:center;gap:20px}
+  .page-hero-logo-col{justify-content:center}
+  .rec-hero-logo{max-width:140px}
+  .page-hero-eyebrow{justify-content:center}
+  .page-hero p{max-width:520px;margin:0 auto}}
 
 .rec-filters{padding:32px 0 0;background:#fff}
 .rec-filters-inner{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--border)}
@@ -201,9 +209,14 @@ footer{background:#111009;padding:60px 0 28px}
 <section class="page-hero">
   <div class="container">
     <div class="page-hero-inner fi">
-      <div class="page-hero-eyebrow">Recetas e ideas</div>
-      <h1>Inspiración para tu cocina</h1>
-      <p>Recetas, consejos y usos para sacarle el máximo partido a nuestros productos. Desde el asado del domingo hasta la repostería de cada día.</p>
+      <div class="page-hero-grid">
+        <div class="page-hero-logo-col"><img src="assets/img/logos/simple-chef-logo.svg" alt="Simple Chef" class="rec-hero-logo"></div>
+        <div class="page-hero-text-col">
+          <div class="page-hero-eyebrow">Recetas e ideas</div>
+          <h1>Inspiración para tu cocina</h1>
+          <p>Recetas, consejos y usos para sacarle el máximo partido a nuestros productos. Desde el asado del domingo hasta la repostería de cada día.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

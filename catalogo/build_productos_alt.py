@@ -61,7 +61,6 @@ ICONS = {
     "prod-reposteria": '<path d="M12 2v8"/><path d="M8 10c-2.2 0-3.3 2-3.3 4.3S6.5 18 8 18M16 10c2.2 0 3.3 2 3.3 4.3S17.5 18 16 18M12 10c-1.3 1.6-1.3 6.4 0 10M12 10c1.3 1.6 1.3 6.4 0 10"/><path d="M8 20h8"/>',
     "prod-instantaneos": '<path d="M3 11h18l-1.6 7.2A2 2 0 0 1 17.5 20h-11a2 2 0 0 1-1.9-1.8z"/><path d="M12 11V8M9 5c0-1 1-1.2 1-2.2M12 5c0-1 1-1.2 1-2.2M15 5c0-1 1-1.2 1-2.2"/>',
     "prod-postres": '<path d="M6 3h12l-1.1 15.2A2 2 0 0 1 14.9 20H9.1a2 2 0 0 1-2-1.8z"/><path d="M6 8h12"/><path d="M12 8v-5"/>',
-    "prod-frutos": '<path d="M12 9c3.3 0 5.3 2.6 5.3 6a5.3 5.3 0 0 1-10.6 0c0-3.4 2-6 5.3-6z"/><path d="M8.3 9c0-2.2 1.3-4 3.7-4s3.7 1.8 3.7 4"/>',
 }
 
 # ---------------------------------------------------------------------------
@@ -98,6 +97,10 @@ CSS_EXTRA = """
 .alt-pill span{line-height:1.25}
 .alt-wrap{background:var(--crema2)}
 .alt-linea{padding:46px 0 10px;scroll-margin-top:84px}
+.fi.side-l{transform:translateX(-56px)}
+.fi.side-r{transform:translateX(56px)}
+.fi.side-l,.fi.side-r{transition:opacity .6s ease,transform .6s ease}
+.fi.side-l.vis,.fi.side-r.vis{opacity:1;transform:translateX(0)}
 .alt-head{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:14px}
 .alt-head-icon{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 2px 10px rgba(30,24,16,.07)}
 .alt-head-icon svg{width:27px;height:27px;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
@@ -119,8 +122,6 @@ CSS_EXTRA = """
 .alt-card-dot{position:absolute;top:10px;left:10px;width:10px;height:10px;border-radius:50%}
 .alt-card-name{font-family:'Roboto Slab',serif;font-weight:700;font-size:16px;color:var(--dark);margin-bottom:8px;line-height:1.3}
 .alt-card-pres{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-bottom:10px}
-.alt-card-cta{font-family:'Open Sans Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--tierra);text-decoration:none}
-.alt-card-cta:hover{text-decoration:underline}
 .alt-car-nav{position:absolute;top:150px;width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 16px rgba(30,24,16,.14);z-index:5;transition:all .15s}
 .alt-car-nav:hover{border-color:var(--tierra);transform:translateY(-1px)}
 .alt-car-nav svg{width:20px;height:20px;stroke:var(--tierra);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
@@ -164,21 +165,21 @@ def card_html(p, color):
       <div class="alt-card-img"><div class="alt-card-dot" style="background:{color}"></div>{img_html}</div>
       <div class="alt-card-name">{p['nombre']}</div>
       <div class="alt-card-pres">{pres}</div>
-      <a href="contacto.html" class="alt-card-cta">Consultar precio &#8594;</a>
     </div>"""
 
 ARROW_L = '<svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>'
 ARROW_R = '<svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>'
 
 sections = []
-for l in LINEAS:
+for i, l in enumerate(LINEAS):
     cards = "".join(card_html(p, l["color"]) for p in l["productos"])
     grid_id = f"grid-{l['id']}"
     nav_html = ""
     if len(l["productos"]) > 3:
         nav_html = f"""<button type="button" class="alt-car-nav alt-car-prev" data-target="{grid_id}" aria-label="Anterior">{ARROW_L}</button><button type="button" class="alt-car-nav alt-car-next" data-target="{grid_id}" aria-label="Siguiente">{ARROW_R}</button>"""
+    side = "side-l" if i % 2 == 0 else "side-r"
     sections.append(f"""
-<div class="alt-linea" id="{l['id']}">
+<div class="alt-linea fi {side}" id="{l['id']}">
   <div class="container">
     <div class="alt-head fi">
       <div class="alt-head-icon" style="background:color-mix(in srgb, {l['color']} 14%, #fff)">
